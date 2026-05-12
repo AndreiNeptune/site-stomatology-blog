@@ -15,6 +15,7 @@ export interface Category {
   titleEn?: string;
   slug: { current: string };
   icon?: string;
+  treatmentType?: string;
 }
 
 export interface Author {

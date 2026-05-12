@@ -1,14 +1,11 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
-import PostCard from "@/components/blog/PostCard";
-import BlogSearchBar from "@/components/blog/BlogSearchBar";
-import RecentProceduresSidebar from "@/components/blog/RecentProceduresSidebar";
+import { Post, Category } from "@/lib/sanity/types";
 
 interface BlogClientPageProps {
-  initialPosts: any[];
-  recentProcedures: any[];
-  categories: any[];
+  initialPosts: Post[];
+  recentProcedures: Post[];
+  categories: Category[];
   locale?: "ro" | "en";
 }
 
@@ -26,8 +23,8 @@ export default function BlogClientPage({
 
     // Filter by treatment type
     if (activeTreatment !== "all") {
-      result = result.filter((post: any) =>
-        post.categories?.some((cat: any) => cat.treatmentType === activeTreatment)
+      result = result.filter((post: Post) =>
+        post.categories?.some((cat: Category) => cat.treatmentType === activeTreatment)
       );
     }
 
@@ -35,14 +32,14 @@ export default function BlogClientPage({
     if (searchTerm.trim()) {
       const term = searchTerm.toLowerCase();
       result = result.filter(
-        (post: any) =>
+        (post: Post) =>
           post.title?.toLowerCase().includes(term) ||
           post.titleEn?.toLowerCase().includes(term) ||
           post.excerpt?.toLowerCase().includes(term) ||
           post.excerptEn?.toLowerCase().includes(term) ||
           post.author?.name?.toLowerCase().includes(term) ||
           post.categories?.some(
-            (cat: any) =>
+            (cat: Category) =>
               cat.title?.toLowerCase().includes(term) ||
               cat.titleEn?.toLowerCase().includes(term)
           )
@@ -52,8 +49,8 @@ export default function BlogClientPage({
     return result;
   }, [initialPosts, searchTerm, activeTreatment]);
 
-  const featuredPosts = filteredPosts.filter((p: any) => p.featured);
-  const regularPosts = filteredPosts.filter((p: any) => !p.featured);
+  const featuredPosts = filteredPosts.filter((p: Post) => p.featured);
+  const regularPosts = filteredPosts.filter((p: Post) => !p.featured);
 
   return (
     <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -101,7 +98,7 @@ export default function BlogClientPage({
               {featuredPosts.length > 0 && !searchTerm && activeTreatment === "all" && (
                 <div className="mb-10">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {featuredPosts.map((post: any) => (
+                    {featuredPosts.map((post: Post) => (
                       <PostCard key={post._id} post={post} featured locale={locale} />
                     ))}
                   </div>
@@ -111,7 +108,7 @@ export default function BlogClientPage({
               {/* Regular Posts Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {(searchTerm || activeTreatment !== "all" ? filteredPosts : regularPosts).map(
-                  (post: any) => (
+                  (post: Post) => (
                     <PostCard key={post._id} post={post} locale={locale} />
                   )
                 )}
@@ -134,7 +131,7 @@ export default function BlogClientPage({
                     </h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {categories.map((cat: any) => (
+                    {categories.map((cat: Category) => (
                       <button
                         key={cat._id}
                         onClick={() => {
@@ -157,3 +154,4 @@ export default function BlogClientPage({
     </div>
   );
 }
+
