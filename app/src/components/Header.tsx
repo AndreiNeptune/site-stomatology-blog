@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import Link from "next/link";
 import Logo from "./Logo";
 import { cn } from "@/lib/utils";
 
@@ -50,17 +51,17 @@ export default function Header() {
         <div className="flex items-center justify-between">
 
           {/* Logo */}
-          <a href="/#acasa" className="relative z-10">
+          <Link href="/#acasa" className="relative z-10">
             <Logo
               variant={isSolid ? "dark" : "light"}
               size="md"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
@@ -71,7 +72,7 @@ export default function Header() {
                 )}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -87,7 +88,7 @@ export default function Header() {
               <Phone className="w-4 h-4" />
               {PHONE_DISPLAY}
             </a>
-            <a
+            <Link
               href="/programare"
               className={cn(
                 "px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 active:scale-95",
@@ -97,7 +98,7 @@ export default function Header() {
               )}
             >
               Programare
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -128,31 +129,33 @@ export default function Header() {
           >
             <div className="max-w-7xl mx-auto px-4 py-6 space-y-1">
               {navLinks.map((link, i) => (
-                <motion.a
+                <Link
                   key={link.href}
                   href={link.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={() => setIsMobileMenuOpen(false)}
+                  as={motion.a}
                   className="block px-4 py-3 rounded-2xl text-neutral-700 font-medium hover:bg-primary-50 hover:text-primary-600 transition-colors"
                 >
                   {link.label}
-                </motion.a>
+                </Link>
               ))}
               <div className="pt-4 border-t border-primary-100">
-                <a
+                <Link
                   href="/programare"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full text-center px-6 py-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold"
                 >
                   Programare Online
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
     </header>
   );
 }

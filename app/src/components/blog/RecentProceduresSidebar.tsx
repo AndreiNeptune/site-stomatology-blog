@@ -1,6 +1,5 @@
-import Image from "next/image";
-import { urlFor } from "@/lib/sanity/image";
-import { ArrowRight, Clock } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 interface RecentProceduresSidebarProps {
   posts: Array<{
@@ -48,7 +47,7 @@ export default function RecentProceduresSidebar({ posts, locale = "ro" }: Recent
             : "";
 
           return (
-            <a
+            <Link
               key={post._id}
               href={`/blog/${post.slug.current}`}
               className="group flex gap-3 p-3 rounded-2xl hover:bg-primary-50/50 transition-all duration-300"
@@ -89,19 +88,19 @@ export default function RecentProceduresSidebar({ posts, locale = "ro" }: Recent
                   )}
                 </div>
               </div>
-            </a>
+            </Link>
           );
         })}
       </div>
 
       {/* View All */}
-      <a
+      <Link
         href="/blog"
         className="flex items-center justify-center gap-2 mt-6 py-3 rounded-xl border border-primary-100 text-sm font-semibold text-primary-500 hover:bg-primary-50 hover:border-primary-200 transition-all duration-300 group"
       >
         {locale === "ro" ? "Vezi toate articolele" : "View all articles"}
         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-      </a>
+      </Link>
     </aside>
   );
 }

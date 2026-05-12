@@ -1,5 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { client } from "@/lib/sanity/client";
 
@@ -78,13 +79,13 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Main Article Content */}
           <article className="flex-1 min-w-0" id={`post-${post._id}`}>
             {/* Back to Blog */}
-            <a
+            <Link
               href="/blog"
               className="inline-flex items-center gap-1 text-sm font-medium text-neutral-500 hover:text-primary-600 transition-colors mb-8"
             >
               <ChevronLeft className="w-4 h-4" />
               Înapoi la Blog
-            </a>
+            </Link>
 
             {/* Header */}
             <header className="mb-10">
