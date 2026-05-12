@@ -1,0 +1,92 @@
+
+> app@0.1.0 lint
+> eslint
+
+
+C:\Users\Andrei\Desktop\sites\site stomatology\app\src\app\(site)\blog\[slug]\page.tsx
+  81:13  error  Do not use an `<a>` element to navigate to `/blog/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+  92:45  error  Unexpected any. Specify a different type                                                                                                                    @typescript-eslint/no-explicit-any
+
+C:\Users\Andrei\Desktop\sites\site stomatology\app\src\app\(site)\despre-noi\page.tsx
+    3:10  warning  'motion' is defined but never used                               @typescript-eslint/no-unused-vars
+  279:23  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  279:37  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Andrei\Desktop\sites\site stomatology\app\src\app\(site)\programare\AppointmentForm.tsx
+   3:46  warning  'useEffect' is defined but never used     @typescript-eslint/no-unused-vars
+  57:25  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  57:85  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  65:23  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Andrei\Desktop\sites\site stomatology\app\src\app\actions.ts
+  43:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Andrei\Desktop\sites\site stomatology\app\src\components\AppointmentCTA.tsx
+  3:17  warning  'Calendar' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Andrei\Desktop\sites\site stomatology\app\src\components\Footer.tsx
+  22:31  error    Unexpected any. Specify a different type           @typescript-eslint/no-explicit-any
+  30:30  error    Unexpected any. Specify a different type           @typescript-eslint/no-explicit-any
+  44:7   warning  'serviceLinks' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Andrei\Desktop\sites\site stomatology\app\src\components\Header.tsx
+  53:11  error  Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+C:\Users\Andrei\Desktop\sites\site stomatology\app\src\components\blog\BlogClientPage.tsx
+    3:10  warning  'useEffect' is defined but never used     @typescript-eslint/no-unused-vars
+    9:17  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   10:21  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   11:15  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   29:37  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   30:37  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   38:16  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   45:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   55:50  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   56:49  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  104:47  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  114:26  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  137:43  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Andrei\Desktop\sites\site stomatology\app\src\components\blog\PortableText.tsx
+   7:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  28:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  33:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  38:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  41:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  44:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  51:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  54:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  55:26  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  60:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  75:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  78:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  83:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  84:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  89:10  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Andrei\Desktop\sites\site stomatology\app\src\components\blog\PostCard.tsx
+  14:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  26:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Andrei\Desktop\sites\site stomatology\app\src\components\blog\RecentProceduresSidebar.tsx
+   3:22  warning  'Clock' is defined but never used                                                                                                                           @typescript-eslint/no-unused-vars
+  11:17  error    Unexpected any. Specify a different type                                                                                                                    @typescript-eslint/no-explicit-any
+  98:7   error    Do not use an `<a>` element to navigate to `/blog/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+C:\Users\Andrei\Desktop\sites\site stomatology\app\src\lib\constants.ts
+  1:10   warning  'CheckCircle2' is defined but never used  @typescript-eslint/no-unused-vars
+  1:24   warning  'CircleDot' is defined but never used     @typescript-eslint/no-unused-vars
+  1:35   warning  'Sparkles' is defined but never used      @typescript-eslint/no-unused-vars
+  1:45   warning  'Sun' is defined but never used           @typescript-eslint/no-unused-vars
+  1:50   warning  'Crown' is defined but never used         @typescript-eslint/no-unused-vars
+  1:57   warning  'AlignLeft' is defined but never used     @typescript-eslint/no-unused-vars
+  1:68   warning  'ShieldCheck' is defined but never used   @typescript-eslint/no-unused-vars
+  1:81   warning  'Microscope' is defined but never used    @typescript-eslint/no-unused-vars
+  1:93   warning  'HeartPulse' is defined but never used    @typescript-eslint/no-unused-vars
+  1:105  warning  'Siren' is defined but never used         @typescript-eslint/no-unused-vars
+
+C:\Users\Andrei\Desktop\sites\site stomatology\app\src\lib\sanity\image.ts
+  6:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+??? 59 problems (43 errors, 16 warnings)
+

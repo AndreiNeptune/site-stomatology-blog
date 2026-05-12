@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+
 import { 
   ShieldCheck, 
   Zap, 
@@ -276,7 +276,7 @@ export default function AboutPage() {
                   <div className="relative mb-8">
                     <Quote className="absolute -top-4 -left-4 w-12 h-12 text-primary-50 opacity-50" />
                     <p className="relative z-10 text-neutral-700 italic leading-relaxed">
-                      "{review.text}"
+                      &quot;{review.text}&quot;
                     </p>
                   </div>
                   <div className="mt-auto pt-6 border-t border-neutral-50 flex items-center gap-4">

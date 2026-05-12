@@ -1,6 +1,3 @@
-import { CheckCircle2, CircleDot, Sparkles, Sun, Crown, AlignLeft, ShieldCheck, Microscope, HeartPulse, Siren } from "lucide-react";
-import React from "react";
-
 export interface Bundle {
   id: string;
   badge?: string;
@@ -23,7 +20,7 @@ export const bundles: Bundle[] = [
     badgeColor: "bg-primary-100 text-primary-700",
     title: "Aparat Dentar",
     subtitle: "Zâmbet perfect aliniat și sănătos",
-    image: "/images/services/aparat dentar.jpg",
+    image: "/images/services/aparat%20dentar.jpg",
     description: "Dispozitive ortodontice care aliniază și îndreaptă dinții. Esențiale pentru sănătatea dentară și estetica facială.",
     features: [
       "Consultație ortodontică de specialitate",
