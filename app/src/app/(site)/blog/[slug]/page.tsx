@@ -51,12 +51,14 @@ export async function generateMetadata(
   };
 }
 
+import { Post, Category } from "@/lib/sanity/types";
+
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const [post, recentProcedures] = await Promise.all([
     client.fetch(postBySlugQuery, { slug }),
     client.fetch(recentProceduresQuery),
-  ]);
+  ]) as [Post, Post[]];
 
   if (!post) {
     notFound();
@@ -90,7 +92,7 @@ export default async function BlogPostPage({ params }: Props) {
             {/* Header */}
             <header className="mb-10">
               <div className="flex flex-wrap gap-2 mb-4">
-                {post.categories?.map((cat: any) => (
+                {post.categories?.map((cat: Category) => (
                   <span
                     key={cat._id}
                     className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary-50 text-primary-700"

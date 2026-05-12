@@ -1,21 +1,8 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { Post } from "@/lib/sanity/types";
 
 interface RecentProceduresSidebarProps {
-  posts: Array<{
-    _id: string;
-    title: string;
-    titleEn?: string;
-    slug: { current: string };
-    mainImage?: any;
-    publishedAt?: string;
-    categories?: Array<{
-      _id: string;
-      title: string;
-      titleEn?: string;
-      icon?: string;
-    }>;
-  }>;
+  posts: Post[];
   locale?: "ro" | "en";
 }
 

@@ -1,31 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { urlFor } from "@/lib/sanity/image";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Post, SanityImage } from "@/lib/sanity/types";
 
 interface PostCardProps {
-  post: {
-    _id: string;
-    title: string;
-    titleEn?: string;
-    slug: { current: string };
-    excerpt?: string;
-    excerptEn?: string;
-    mainImage?: any;
-    publishedAt?: string;
-    readTime?: number;
-    categories?: Array<{
-      _id: string;
-      title: string;
-      titleEn?: string;
-      icon?: string;
-    }>;
-    author?: {
-      name: string;
-      specialization?: string;
-      image?: any;
-    };
-  };
+  post: Post;
   featured?: boolean;
   locale?: "ro" | "en";
 }
@@ -46,7 +27,7 @@ export default function PostCard({ post, featured = false, locale = "ro" }: Post
     : "";
 
   return (
-    <a
+    <Link
       href={`/blog/${post.slug.current}`}
       className={cn(
         "group block rounded-3xl overflow-hidden bg-white border border-primary-100/50 transition-all duration-500",
@@ -152,6 +133,6 @@ export default function PostCard({ post, featured = false, locale = "ro" }: Post
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
