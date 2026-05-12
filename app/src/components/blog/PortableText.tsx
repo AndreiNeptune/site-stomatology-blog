@@ -1,10 +1,10 @@
-import { PortableText as PortableTextComponent } from "@portabletext/react";
+import { PortableText as PortableTextComponent, PortableTextComponents } from "@portabletext/react";
 import Image from "next/image";
 import { urlFor } from "@/lib/sanity/image";
 import { PortableTextBlock } from "@portabletext/types";
 import { SanityImage } from "@/lib/sanity/types";
 
-const components = {
+const components: PortableTextComponents = {
   types: {
     image: ({ value }: { value: SanityImage & { caption?: string } }) => {
       if (!value?.asset?._ref) return null;
@@ -92,6 +92,6 @@ interface PortableTextProps {
 }
 
 export default function PortableText({ value }: PortableTextProps) {
-  return <PortableTextComponent value={value} components={components as any} />;
+  return <PortableTextComponent value={value} components={components} />;
 }
 
