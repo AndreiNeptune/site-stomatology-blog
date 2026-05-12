@@ -3,7 +3,7 @@ import Link from "next/link";
 import { urlFor } from "@/lib/sanity/image";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Post, SanityImage } from "@/lib/sanity/types";
+import { Post } from "@/lib/sanity/types";
 
 interface PostCardProps {
   post: Post;

@@ -1,5 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Post } from "@/lib/sanity/types";
+import { urlFor } from "@/lib/sanity/image";
+import { ArrowRight } from "lucide-react";
 
 interface RecentProceduresSidebarProps {
   posts: Post[];
