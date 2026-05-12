@@ -129,18 +129,20 @@ export default function Header() {
           >
             <div className="max-w-7xl mx-auto px-4 py-6 space-y-1">
               {navLinks.map((link, i) => (
-                <Link
+                <motion.div
                   key={link.href}
-                  href={link.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  as={motion.a}
-                  className="block px-4 py-3 rounded-2xl text-neutral-700 font-medium hover:bg-primary-50 hover:text-primary-600 transition-colors"
                 >
-                  {link.label}
-                </Link>
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block px-4 py-3 rounded-2xl text-neutral-700 font-medium hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
               <div className="pt-4 border-t border-primary-100">
                 <Link
