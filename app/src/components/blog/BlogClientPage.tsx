@@ -1,5 +1,9 @@
 "use client";
 
+import { useEffect, useState, useMemo } from "react";
+import PostCard from "@/components/blog/PostCard";
+import BlogSearchBar from "@/components/blog/BlogSearchBar";
+import RecentProceduresSidebar from "@/components/blog/RecentProceduresSidebar";
 import { Post, Category } from "@/lib/sanity/types";
 
 interface BlogClientPageProps {

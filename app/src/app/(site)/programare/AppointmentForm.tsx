@@ -54,7 +54,7 @@ export default function AppointmentForm() {
         const { error } = await supabase.from("programari").insert([data]);
 
         if (error) {
-          if ((error as any).message?.toLowerCase().includes("fetch") || !(error as any).status) {
+          if (error.message?.toLowerCase().includes("fetch")) {
             console.error("EROARE CORS/NETWORK DETECTATĂ: Verifică Supabase Dashboard → Authentication → Settings.");
           }
           throw error;
@@ -62,11 +62,11 @@ export default function AppointmentForm() {
 
         setSubmitted(true);
         form.reset();
-      } catch (error: any) {
+        setSubmitted(true);
+        form.reset();
+      } catch (error) {
         console.error("Eroare la trimiterea formularului:", error);
-        let detailedError = error.message || "A apărut o problemă la trimiterea datelor.";
-        if (error.details) detailedError += `\nDetails: ${error.details}`;
-        if (error.hint) detailedError += `\nHint: ${error.hint}`;
+        const detailedError = error instanceof Error ? error.message : "A apărut o problemă la trimiterea datelor.";
         alert("Eroare: " + detailedError);
       }
     });

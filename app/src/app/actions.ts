@@ -40,11 +40,12 @@ export async function submitContactForm(formData: FormData) {
     }
 
     return { success: true, message: "Mesaj trimis cu succes!" };
-  } catch (error: any) {
+  } catch (error) {
     console.error("Eroare la trimiterea formularului spre Supabase:", error);
+    const message = error instanceof Error ? error.message : "A apărut o eroare la trimiterea mesajului.";
     return { 
       success: false, 
-      message: error.message || "A apărut o eroare la trimiterea mesajului. Te rugăm să încerci din nou." 
+      message: message
     };
   }
 }

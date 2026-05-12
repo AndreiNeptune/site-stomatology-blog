@@ -2,10 +2,11 @@ import { PortableText as PortableTextComponent } from "@portabletext/react";
 import Image from "next/image";
 import { urlFor } from "@/lib/sanity/image";
 import { PortableTextBlock } from "@portabletext/types";
+import { SanityImage } from "@/lib/sanity/types";
 
 const components = {
   types: {
-    image: ({ value }: { value: any }) => {
+    image: ({ value }: { value: SanityImage & { caption?: string } }) => {
       if (!value?.asset?._ref) return null;
       return (
         <figure className="my-8 rounded-2xl overflow-hidden">
