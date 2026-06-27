@@ -36,3 +36,10 @@ research_notes.md
 # Sanity
 studio-blog-stoma/.sanity/
 studio-blog-stoma/dist/
+
+# Agent & AI Assistant Files
+AGENTS.md
+CLAUDE.md
+app/AGENTS.md
+app/CLAUDE.md
+

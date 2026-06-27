@@ -28,10 +28,10 @@ export default async function BlogPage() {
     client.fetch(categoriesQuery),
   ]);
 
-  console.log(`[Blog Build] Fetched: ${posts?.length || 0} posts, ${recentProcedures?.length || 0} procedures, ${categories?.length || 0} categories`);
-  if (posts?.length > 0) {
-    console.log(`[Blog Build] First post title: ${posts[0].title}`);
-  }
+  // console.log(`[Blog Build] Fetched: ${posts?.length || 0} posts, ${recentProcedures?.length || 0} procedures, ${categories?.length || 0} categories`);
+  // if (posts?.length > 0) {
+  //   console.log(`[Blog Build] First post title: ${posts[0].title}`);
+  // }
 
   return (
     <section className="min-h-screen pt-32 pb-20" id="blog-page">
