@@ -5,9 +5,9 @@ import { Award, GraduationCap, Sparkles, Heart, Star } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 // ─── UPDATE THESE VALUES ──────────────────────────────────────────────────────
-const DOCTOR_NAME     = "Dr. Bianca";         // TODO: replace
+const DOCTOR_NAME     = "Dr. Bianca Ionescu";         // TODO: replace
 const DOCTOR_TITLE    = "Medic Specialist Estetică Dentară"; // TODO: replace
-const DOCTOR_SUBTITLE = "Fondatoare Luna Dental";       // TODO: replace
+const DOCTOR_SUBTITLE = "Fondatoare Dr. Bianca Ionescu";       // TODO: replace
 const INSTAGRAM_URL   = "#";   // TODO: add Instagram link
 const FACEBOOK_URL    = "#";   // TODO: add Facebook link
 // ─────────────────────────────────────────────────────────────────────────────
@@ -108,7 +108,7 @@ export default function DoctorSection() {
               <div className="space-y-4 text-neutral-600 text-[15px] leading-relaxed mb-10 border-l-2 border-primary-100 pl-5">
                 <p>
                   Pasionată de frumusețea autentică și de transformările care schimbă vieți,
-                  a fondat Luna Dental cu o misiune simplă: stomatologia trebuie să fie o
+                  a fondat Dr. Bianca Ionescu cu o misiune simplă: stomatologia trebuie să fie o
                   experiență plăcută, nu una de temut.
                 </p>
                 <p>
@@ -144,7 +144,7 @@ export default function DoctorSection() {
                   href={INSTAGRAM_URL}
                   target={INSTAGRAM_URL !== "#" ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  aria-label="Instagram Luna Dental"
+                  aria-label="Instagram Dr. Bianca Ionescu"
                   className="w-10 h-10 rounded-full bg-neutral-100 text-neutral-500 flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-400 hover:to-primary-600 hover:text-white transition-all duration-300 hover:scale-110"
                 >
                   <InstagramIcon className="w-5 h-5" />
@@ -153,7 +153,7 @@ export default function DoctorSection() {
                   href={FACEBOOK_URL}
                   target={FACEBOOK_URL !== "#" ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  aria-label="Facebook Luna Dental"
+                  aria-label="Facebook Dr. Bianca Ionescu"
                   className="w-10 h-10 rounded-full bg-neutral-100 text-neutral-500 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-110"
                 >
                   <FacebookIcon className="w-5 h-5" />

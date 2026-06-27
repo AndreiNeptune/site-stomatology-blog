@@ -43,7 +43,7 @@ const techItems = [
 const testimonials = [
   {
     name: "Leona Nery",
-    text: "O experiență cu totul deosebită! Am venit cu teamă, am plecat cu un zâmbet nou și încredere. Recomand cu drag Luna Dental.",
+    text: "O experiență cu totul deosebită! Am venit cu teamă, am plecat cu un zâmbet nou și încredere. Recomand cu drag Dr. Bianca Ionescu.",
     rating: 5
   },
   {
@@ -78,13 +78,13 @@ export default function AboutPage() {
           <AnimatedSection direction="up" className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-primary-300/30 text-primary-200 text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
-              Luna Dental — Povestea Noastră
+              Dr. Bianca Ionescu — Povestea Noastră
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 font-display">
               Frumusețea începe cu <span className="bg-gradient-to-r from-primary-200 via-accent-300 to-primary-300 bg-clip-text text-transparent">un zâmbet</span>
             </h1>
             <p className="text-xl text-white/80 mb-8 max-w-2xl leading-relaxed">
-              La Luna Dental, credem că fiecare femeie merită un zâmbet care o face să strălucească. 
+              La Dr. Bianca Ionescu, credem că fiecare femeie merită un zâmbet care o face să strălucească. 
               Îmbinăm estetica delicată cu tehnologia de vârf pentru a crea transformări uimitoare.
             </p>
             <div className="flex gap-4">
@@ -122,10 +122,10 @@ export default function AboutPage() {
               </h3>
               <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
                 <p>
-                  Bine ați venit! <strong>Luna Dental</strong> este clinica stomatologică premium din București, concepută pentru femeile care iubesc estetica și prețuiesc rafinamentul.
+                  Bine ați venit! <strong>Dr. Bianca Ionescu</strong> este clinica stomatologică premium din București, concepută pentru femeile care iubesc estetica și prețuiesc rafinamentul.
                 </p>
                 <p>
-                  La Luna Dental, stomatologia nu este o experiență clinică rece — este un ritual de îngrijire. Un spațiu cald, elegant, unde te simți văzută și prețuită.
+                  La Dr. Bianca Ionescu, stomatologia nu este o experiență clinică rece — este un ritual de îngrijire. Un spațiu cald, elegant, unde te simți văzută și prețuită.
                 </p>
                 <p>
                   Echipa noastră de specialiști dedicați te va ajuta să obții zâmbetul de care visezi, printr-o abordare personalizată, empatică și mereu elegantă.
@@ -285,7 +285,7 @@ export default function AboutPage() {
                     </div>
                     <div>
                       <p className="font-bold text-neutral-900">{review.name}</p>
-                      <p className="text-sm text-neutral-500">Client Luna Dental</p>
+                      <p className="text-sm text-neutral-500">Client Dr. Bianca Ionescu</p>
                     </div>
                   </div>
                 </div>

@@ -10,11 +10,11 @@ import {
 import BlogClientPage from "@/components/blog/BlogClientPage";
 
 export const metadata: Metadata = {
-  title: "Blog | Luna Dental — Articole despre Proceduri Stomatologice",
+  title: "Blog | Dr. Bianca Ionescu — Articole despre Proceduri Stomatologice",
   description:
-    "Descoperiți cele mai noi articole despre proceduri stomatologice, sfaturi pentru sănătatea orală, estetica dentară și tratamente moderne. Blog de specialitate Luna Dental.",
+    "Descoperiți cele mai noi articole despre proceduri stomatologice, sfaturi pentru sănătatea orală, estetica dentară și tratamente moderne. Blog de specialitate Dr. Bianca Ionescu.",
   openGraph: {
-    title: "Blog | Luna Dental",
+    title: "Blog | Dr. Bianca Ionescu",
     description:
       "Articole despre proceduri stomatologice și sănătatea orală scrise de medicii noștri specialiști.",
     type: "website",
@@ -40,7 +40,7 @@ export default async function BlogPage() {
         <div className="text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-semibold mb-6">
             <span className="animate-sparkle">✨</span>
-            Blog Luna Dental
+            Blog Dr. Bianca Ionescu
           </span>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-4">
             Articole &{" "}

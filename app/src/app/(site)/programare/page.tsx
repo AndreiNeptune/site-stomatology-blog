@@ -5,15 +5,15 @@ import AppointmentForm from "./AppointmentForm";
 // ─── CONTACT DETAILS — UPDATE THESE ─────────────────────────────────────────
 const PHONE_DISPLAY  = "07__ ___ ___";                    // TODO
 const PHONE_LINK     = "tel:07XXXXXXXX";                  // TODO
-const EMAIL          = "contact@lunadental.ro";           // TODO
+const EMAIL          = "contact@drbiancaionescu.ro";           // TODO
 const ADDRESS_LINE1  = "Str. [Adresa Clinicii]";          // TODO
 const ADDRESS_LINE2  = "Sector __, București";            // TODO
-const MAPS_URL       = "https://maps.google.com/?q=Luna+Dental+Bucuresti"; // TODO
+const MAPS_URL       = "https://maps.google.com/?q=Dr+Bianca+Ionescu+Bucuresti"; // TODO
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const metadata = {
-  title: "Programare Online | Luna Dental",
-  description: "Programează-te online la Luna Dental. Te vom contacta în cel mai scurt timp pentru a stabili detaliile vizitei tale.",
+  title: "Programare Online | Dr. Bianca Ionescu",
+  description: "Programează-te online la Dr. Bianca Ionescu. Te vom contacta în cel mai scurt timp pentru a stabili detaliile vizitei tale.",
 };
 
 import { Suspense } from "react";
@@ -35,7 +35,7 @@ export default function ProgramarePage() {
               </span>
             </h1>
             <p className="text-lg text-neutral-600">
-              Completează formularul de mai jos și echipa Luna Dental
+              Completează formularul de mai jos și echipa Dr. Bianca Ionescu
               te va contacta în cel mai scurt timp, cu căldură și profesionalism.
             </p>
           </div>

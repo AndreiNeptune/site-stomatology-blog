@@ -29,7 +29,7 @@ export default function SpecialOffers() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 mb-5 font-display">
             Pachete{" "}
             <span className="bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent">
-              Luna Dental
+              Dr. Bianca Ionescu
             </span>
           </h2>
           <p className="text-neutral-500 text-lg leading-relaxed">

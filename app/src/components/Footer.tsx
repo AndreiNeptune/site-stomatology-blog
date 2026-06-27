@@ -10,10 +10,10 @@ import { cn } from "@/lib/utils";
 // ─── CONTACT DETAILS — UPDATE THESE ─────────────────────────────────────────
 const PHONE_DISPLAY   = "07__ ___ ___";                       // TODO
 const PHONE_LINK      = "tel:07XXXXXXXX";                     // TODO
-const EMAIL           = "contact@lunadental.ro";              // TODO
+const EMAIL           = "contact@drbiancaionescu.ro";              // TODO
 const ADDRESS_LINE1   = "Str. [Adresa Clinicii]";             // TODO
 const ADDRESS_LINE2   = "Sector __, București";               // TODO
-const MAPS_QUERY      = "Luna+Dental+Bucuresti";              // TODO: Google Maps query
+const MAPS_QUERY      = "Dr+Bianca+Ionescu+Bucuresti";              // TODO: Google Maps query
 const MAPS_EMBED_SRC  = "";                                   // TODO: paste Google Maps embed URL
 const INSTAGRAM_URL   = "#";                                  // TODO: Instagram link
 const FACEBOOK_URL    = "#";                                  // TODO: Facebook link
@@ -92,7 +92,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Logo variant="light" size="lg" />
             <p className="text-neutral-400 text-sm leading-relaxed mt-5 mb-6">
-              Where Beauty Meets Dentistry. La Luna Dental, fiecare zâmbet
+              Where Beauty Meets Dentistry. La Dr. Bianca Ionescu, fiecare zâmbet
               este o operă de artă creată cu grijă, rafinament și pasiune.
             </p>
             <div className="flex items-center gap-3">
@@ -101,7 +101,7 @@ export default function Footer() {
                 target={INSTAGRAM_URL !== "#" ? "_blank" : undefined}
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-neutral-800 text-neutral-400 flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-400 hover:to-primary-600 hover:text-white transition-all duration-300"
-                aria-label="Instagram Luna Dental"
+                aria-label="Instagram Dr. Bianca Ionescu"
               >
                 <InstagramIcon className="w-5 h-5" />
               </a>
@@ -110,7 +110,7 @@ export default function Footer() {
                 target={FACEBOOK_URL !== "#" ? "_blank" : undefined}
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-neutral-800 text-neutral-400 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300"
-                aria-label="Facebook Luna Dental"
+                aria-label="Facebook Dr. Bianca Ionescu"
               >
                 <FacebookIcon className="w-5 h-5" />
               </a>
@@ -277,7 +277,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-neutral-500 text-xs">
-              © {new Date().getFullYear()} Luna Dental. Toate drepturile rezervate.
+              © {new Date().getFullYear()} Dr. Bianca Ionescu. Toate drepturile rezervate.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
               {legalLinks.map((link) => (

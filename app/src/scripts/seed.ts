@@ -105,7 +105,7 @@ async function seed() {
             {
               _key: 'p2c1',
               _type: 'span',
-              text: 'La Luna Dental, folosim tehnologii de ultimă oră pentru a asigura o experiență fără durere și rezultate estetice deosebite. Totul începe cu o consultație și o tomografie computerizată (CBCT) pentru o planificare precisă.',
+              text: 'La Dr. Bianca Ionescu, folosim tehnologii de ultimă oră pentru a asigura o experiență fără durere și rezultate estetice deosebite. Totul începe cu o consultație și o tomografie computerizată (CBCT) pentru o planificare precisă.',
             },
           ],
         },

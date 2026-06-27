@@ -33,7 +33,7 @@ export default function AppointmentCTA() {
                 <p className="text-primary-100/70 text-lg mb-10 max-w-lg mx-auto leading-relaxed">
                   Fă primul pas spre zâmbetul pe care ți l-ai dorit.
                   Te contactăm în maximum 24 de ore pentru a stabili
-                  detaliile vizitei tale la Luna Dental.
+                  detaliile vizitei tale la Dr. Bianca Ionescu.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

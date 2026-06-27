@@ -26,12 +26,12 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lunadental.ro"),
-  title: "Luna Dental | Where Beauty Meets Dentistry — București",
+  metadataBase: new URL("https://drbiancaionescu.ro"),
+  title: "Dr. Bianca Ionescu | Where Beauty Meets Dentistry — București",
   description:
-    "Luna Dental este clinica stomatologică premium din București, dedicată rezultatelor estetice elegante. Fațete dentare, albire profesională, implanturi și coroane — toate cu grijă, fără durere. Str. Vulturilor 93A, Sector 3.",
+    "Dr. Bianca Ionescu este clinica stomatologică premium din București, dedicată rezultatelor estetice elegante. Fațete dentare, albire profesională, implanturi și coroane — toate cu grijă, fără durere. Str. Vulturilor 93A, Sector 3.",
   keywords: [
-    "luna dental",
+    "Dr. Bianca Ionescu",
     "clinica stomatologica bucuresti",
     "fatete dentare",
     "implanturi dentare",
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     "zambet perfect",
     "beauty dentistry",
   ],
-  authors: [{ name: "Luna Dental" }],
+  authors: [{ name: "Dr. Bianca Ionescu" }],
   openGraph: {
-    title: "Luna Dental | Where Beauty Meets Dentistry",
+    title: "Dr. Bianca Ionescu | Where Beauty Meets Dentistry",
     description:
       "Proceduri sigure, complet fără durere, cu rezultate vizibile încă de la prima ședință. Zâmbetul tău, arta noastră.",
-    url: "https://lunadental.ro",
-    siteName: "Luna Dental",
+    url: "https://drbiancaionescu.ro",
+    siteName: "Dr. Bianca Ionescu",
     locale: "ro_RO",
     type: "website",
     images: [
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
         url: "/images/logo-pink.png",
         width: 800,
         height: 600,
-        alt: "Luna Dental Logo",
+        alt: "Dr. Bianca Ionescu Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luna Dental | Where Beauty Meets Dentistry",
+    title: "Dr. Bianca Ionescu | Where Beauty Meets Dentistry",
     description: "Proceduri sigure, complet fără durere, cu rezultate vizibile încă de la prima ședință.",
     images: ["/images/logo-pink.png"],
   },

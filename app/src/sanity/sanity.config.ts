@@ -7,7 +7,7 @@ import {schemaTypes} from './schemaTypes'
 export default defineConfig({
   basePath: '/admin',
   name: 'default',
-  title: 'Luna Dental Blog',
+  title: 'Dr. Bianca Ionescu Blog',
 
   projectId: 'igoc6trt',
   dataset: 'production',

@@ -5,8 +5,8 @@ import AppointmentCTA from "@/components/AppointmentCTA";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "Tarife & Prețuri | Luna Dental",
-  description: "Lista completă de tarife pentru serviciile estetice dentare ale Luna Dental: implanturi, fațete, albire, aparate dentare și altele — cu transparență totală.",
+  title: "Tarife & Prețuri | Dr. Bianca Ionescu",
+  description: "Lista completă de tarife pentru serviciile estetice dentare ale Dr. Bianca Ionescu: implanturi, fațete, albire, aparate dentare și altele — cu transparență totală.",
 };
 
 export default function TarifePage() {

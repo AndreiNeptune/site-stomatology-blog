@@ -10,9 +10,9 @@ import { bundles } from "@/lib/constants";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Servicii Stomatologice Premium | Luna Dental",
+  title: "Servicii Stomatologice Premium | Dr. Bianca Ionescu",
   description:
-    "Descoperă gama de tratamente estetice oferite de Luna Dental: implanturi dentare, fațete, albire profesională, coroane dentare și ortodonție în București.",
+    "Descoperă gama de tratamente estetice oferite de Dr. Bianca Ionescu: implanturi dentare, fațete, albire profesională, coroane dentare și ortodonție în București.",
 };
 
 export default function ServicesPage() {
@@ -29,7 +29,7 @@ export default function ServicesPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-primary-200/30 text-primary-200 text-sm font-semibold mb-6">
-              Luna Dental — Servicii
+              Dr. Bianca Ionescu — Servicii
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-8 leading-tight font-display">
               Pachete &{" "}

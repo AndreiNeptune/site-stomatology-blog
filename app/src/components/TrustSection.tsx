@@ -93,12 +93,12 @@ export default function TrustSection() {
         {/* Section Header */}
         <AnimatedSection className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100 text-primary-600 text-sm font-semibold mb-4">
-            De Ce Luna Dental
+            De Ce Dr. Bianca Ionescu
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 mb-5 font-display">
             De ce alegi{" "}
             <span className="bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent">
-              Luna Dental
+              Dr. Bianca Ionescu
             </span>
             ?
           </h2>

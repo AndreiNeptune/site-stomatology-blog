@@ -1,4 +1,4 @@
-// Luna Dental — SVG Logo Component
+// Dr. Bianca Ionescu — SVG Logo Component
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -68,7 +68,7 @@ export default function Logo({ className, variant = "dark", size = "md" }: LogoP
             textTransform: "uppercase",
           }}
         >
-          Luna Dental
+          Dr. Bianca Ionescu
         </span>
         <span
           style={{

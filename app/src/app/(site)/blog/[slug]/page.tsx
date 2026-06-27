@@ -34,15 +34,15 @@ export async function generateMetadata(
   const post = await client.fetch(postBySlugQuery, { slug });
 
   if (!post) {
-    return { title: "Articol negăsit | Luna Dental" };
+    return { title: "Articol negăsit | Dr. Bianca Ionescu" };
   }
 
   const previousImages = (await parent).openGraph?.images || [];
   const imageUrl = post.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : null;
 
   return {
-    title: `${post.title} | Blog Luna Dental`,
-    description: post.excerpt || "Citiți mai multe pe blogul Luna Dental.",
+    title: `${post.title} | Blog Dr. Bianca Ionescu`,
+    description: post.excerpt || "Citiți mai multe pe blogul Dr. Bianca Ionescu.",
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -121,7 +121,7 @@ export default async function BlogPostPage({ params }: Props) {
                   )}
                   <div>
                     <p className="font-semibold text-neutral-900 text-sm md:text-base">
-                      {post.author?.name || "Echipa Luna Dental"}
+                      {post.author?.name || "Echipa Dr. Bianca Ionescu"}
                     </p>
                     {post.author?.specialization && (
                       <p className="text-xs md:text-sm text-primary-500 capitalize">
@@ -182,7 +182,7 @@ export default async function BlogPostPage({ params }: Props) {
                   </p>
                 </div>
                 <SocialShare
-                  url={`https://lunadental.ro/blog/${post.slug.current}`}
+                  url={`https://drbiancaionescu.ro/blog/${post.slug.current}`}
                   title={post.title}
                   description={post.excerpt}
                 />

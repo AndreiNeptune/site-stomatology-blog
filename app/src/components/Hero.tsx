@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero-bg.png"
-          alt="Luna Dental — Clinică Stomatologică Premium București"
+          alt="Dr. Bianca Ionescu — Clinică Stomatologică Premium București"
           fill
           className="object-cover object-center"
           priority
@@ -69,7 +69,7 @@ export default function Hero() {
             className="text-lg sm:text-xl text-white/70 max-w-xl mb-10 leading-relaxed"
           >
             Estetică dentară delicată, rezultate vizibile, experiență de wellness.
-            La Luna Dental, fiecare vizită se simte ca o răsfățare — nu ca o procedură medicală.
+            La Dr. Bianca Ionescu, fiecare vizită se simte ca o răsfățare — nu ca o procedură medicală.
           </motion.p>
 
           {/* CTAs */}
