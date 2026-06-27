@@ -62,11 +62,11 @@ export default function DoctorSection() {
               {/* Photo card */}
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-elevated aspect-[3/4]">
                 <Image
-                  src="/images/doctor-luna.png"
+                  src="/images/portofoliu/IMG_6546.webp"
                   alt={`${DOCTOR_NAME} — ${DOCTOR_TITLE}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                   quality={90}
                   priority
                 />
