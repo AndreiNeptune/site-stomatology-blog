@@ -39,7 +39,7 @@ const achievements = [
 
 export default function DoctorSection() {
   return (
-    <section id="doctor" className="py-24 lg:py-32 bg-background overflow-hidden">
+    <section id="doctor" className="pt-12 pb-24 lg:py-32 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Section label */}

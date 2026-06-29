@@ -87,7 +87,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 
 export default function TrustSection() {
   return (
-    <section id="de-ce-noi" className="pt-10 pb-24 lg:py-32 bg-neutral-50 overflow-hidden">
+    <section id="de-ce-noi" className="pt-10 pb-12 lg:py-32 bg-neutral-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Section Header */}
