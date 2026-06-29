@@ -19,7 +19,7 @@ const navLinks = [
   { label: "Servicii", href: "/servicii" },
   { label: "Tarife", href: "/tarife" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/programare" },
 ];
 
 export default function Header() {

@@ -38,7 +38,7 @@ const quickLinks = [
   { label: "Servicii", href: "/#servicii" },
   { label: "De Ce Noi", href: "/#de-ce-noi" },
   { label: "Despre Medic", href: "/#doctor" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/programare" },
 ];
 
 const serviceLinks = [
