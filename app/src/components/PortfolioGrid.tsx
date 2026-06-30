@@ -107,6 +107,13 @@ function VideoItem({ item, isPlaying, onPlay }: { item: PortfolioItem, isPlaying
 
 export default function PortfolioGrid() {
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
+  const [visibleCount, setVisibleCount] = useState(12);
+
+  const visibleItems = allItems.slice(0, visibleCount);
+
+  const handleLoadMore = () => {
+    setVisibleCount(prev => Math.min(prev + 12, allItems.length));
+  };
 
   return (
     <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12">
@@ -117,7 +124,7 @@ export default function PortfolioGrid() {
         className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
       >
         <AnimatePresence>
-          {allItems.map((item) => (
+          {visibleItems.map((item) => (
             <motion.div
               key={item.id}
               layout
@@ -146,6 +153,18 @@ export default function PortfolioGrid() {
           ))}
         </AnimatePresence>
       </motion.div>
+
+      {/* Load More Button */}
+      {visibleCount < allItems.length && (
+        <div className="mt-12 flex justify-center">
+          <button
+            onClick={handleLoadMore}
+            className="px-8 py-3 rounded-full border-2 border-primary-100 text-primary-600 font-semibold hover:bg-primary-50 hover:border-primary-200 transition-all duration-300"
+          >
+            Încarcă mai multe
+          </button>
+        </div>
+      )}
     </div>
   );
 }
