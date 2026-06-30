@@ -18,6 +18,7 @@ const navLinks = [
   { label: "Despre Noi", href: "/despre-noi" },
   { label: "Servicii", href: "/servicii" },
   { label: "Tarife", href: "/tarife" },
+  { label: "Portofoliu", href: "/portofoliu" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/programare" },
 ];
