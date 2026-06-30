@@ -67,7 +67,7 @@ const allItems: PortfolioItem[] = [
   { id: "IMG_6955", src: "/images/portofoliu/IMG_6955.webp", type: "image", category: "Implantologie", alt: "Rezultat implant dentar - Caz clinic 35" }
 ];
 
-const categories: Category[] = ["Toate", "Implantologie", "Estetică Dentară", "Ortodonție"];
+// Categories removed for simplicity, using allItems directly
 
 function VideoItem({ item, isPlaying, onPlay }: { item: PortfolioItem, isPlaying: boolean, onPlay: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -106,31 +106,10 @@ function VideoItem({ item, isPlaying, onPlay }: { item: PortfolioItem, isPlaying
 }
 
 export default function PortfolioGrid() {
-  const [activeCategory, setActiveCategory] = useState<Category>("Toate");
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
-
-  const filteredItems = allItems.filter(
-    (item) => activeCategory === "Toate" || item.category === activeCategory
-  );
 
   return (
     <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12">
-      {/* Category Tabs */}
-      <div className="flex flex-wrap justify-center gap-3 mb-12">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setActiveCategory(category)}
-            className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-              activeCategory === category
-                ? "bg-primary-600 text-white shadow-md shadow-primary-500/20"
-                : "bg-white text-neutral-600 hover:bg-primary-50 hover:text-primary-600 border border-neutral-200"
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
 
       {/* Grid */}
       <motion.div 
@@ -138,7 +117,7 @@ export default function PortfolioGrid() {
         className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
       >
         <AnimatePresence>
-          {filteredItems.map((item) => (
+          {allItems.map((item) => (
             <motion.div
               key={item.id}
               layout
@@ -163,23 +142,10 @@ export default function PortfolioGrid() {
                   onPlay={() => setPlayingVideo(item.id)} 
                 />
               )}
-              
-              {/* Overlay label */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <p className="text-white text-xs font-medium tracking-wide">
-                  {item.category}
-                </p>
-              </div>
             </motion.div>
           ))}
         </AnimatePresence>
       </motion.div>
-
-      {filteredItems.length === 0 && (
-        <div className="text-center py-20 text-neutral-500">
-          Nu există încă elemente în această categorie.
-        </div>
-      )}
     </div>
   );
 }
