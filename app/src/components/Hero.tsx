@@ -24,8 +24,8 @@ export default function Hero() {
           quality={90}
         />
         {/* Gradient Overlays — deep rose */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-950/94 via-primary-900/84 to-primary-950/65" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-950/65 via-transparent to-primary-950/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-900/80 to-primary-950/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-950/70 via-transparent to-primary-950/20" />
       </div>
 
       {/* Floating decorative blobs */}
@@ -39,7 +39,7 @@ export default function Hero() {
 
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-primary-300/30 text-primary-200 text-sm font-medium mb-8"
@@ -50,7 +50,7 @@ export default function Hero() {
 
           {/* Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-[1.1] mb-6 font-display"
@@ -63,7 +63,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
             className="text-lg sm:text-xl text-white/70 max-w-xl mb-10 leading-relaxed"
@@ -74,7 +74,7 @@ export default function Hero() {
 
           {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
             className="flex flex-col sm:flex-row gap-4 mb-16"
@@ -97,7 +97,7 @@ export default function Hero() {
 
           {/* Quick Info Strip */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-6 sm:gap-8"
