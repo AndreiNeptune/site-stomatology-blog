@@ -15,14 +15,20 @@ const formSchema = z.object({
     .trim()
     .min(3, "Numele trebuie să conțină cel puțin 3 caractere.")
     .max(100, "Numele este prea lung.")
-    .regex(/^[a-zA-ZăâîșțĂÂÎȘȚ\s\-]+$/, "Numele poate conține doar litere."),
+    .regex(/^[a-zA-ZăâîșțĂÂÎȘȚ\s\-]+$/, "Numele poate conține doar litere.")
+    .refine((val) => /[aeiouăâîyAEIOUĂÂÎY]/.test(val), "Vă rugăm introduceți un nume valid (lipsesc vocalele).")
+    .refine((val) => !/(.)\1{3,}/.test(val), "Numele conține caractere identice consecutive anormale."),
   phone: z.string()
     .trim()
-    .min(10, "Numărul de telefon este prea scurt.")
-    .max(20, "Numărul de telefon este prea lung.")
     .regex(/^[\d\+\s\-\(\)]+$/, "Numărul poate conține doar cifre și simbolurile +, -, (, )")
-    .refine((val) => val.replace(/[^0-9]/g, "").length >= 10, "Trebuie să conțină minim 10 cifre.")
-    .refine((val) => val.replace(/[^0-9]/g, "").length <= 15, "Trebuie să conțină maxim 15 cifre."),
+    .refine((val) => {
+      const digits = val.replace(/[^0-9]/g, "");
+      return digits.length >= 10 && digits.length <= 15;
+    }, "Telefonul trebuie să aibă între 10 și 15 cifre.")
+    .refine((val) => {
+      const digits = val.replace(/[^0-9]/g, "");
+      return !/^(.)\1{7,}$/.test(digits);
+    }, "Numărul de telefon este invalid (prea multe cifre identice)."),
   email: z.string().trim().email("Adresa de email nu este validă.").optional().or(z.literal("")),
   pachet: z.string().optional(),
   message: z.string().trim().max(1000, "Mesajul este prea lung (maxim 1000 caractere).").optional(),
