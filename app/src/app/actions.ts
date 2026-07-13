@@ -91,14 +91,6 @@ export async function submitAppointmentFormServer(data: {
     return { success: true };
   } catch (error: any) {
     console.error("Server Action Supabase Error:", error);
-    const errorMessage = error?.message || error?.details || "Eroare necunoscută la Supabase";
-    
-    if (errorMessage.includes("Invalid API key")) {
-       const urlPartial = process.env.NEXT_PUBLIC_SUPABASE_URL ? process.env.NEXT_PUBLIC_SUPABASE_URL.substring(0, 15) + "..." : "LIPSEȘTE_URL";
-       const keyPartial = process.env.SUPABASE_SERVICE_ROLE_KEY ? process.env.SUPABASE_SERVICE_ROLE_KEY.substring(0, 10) + "..." : "LIPSEȘTE_CHEIE";
-       return { success: false, message: `Eroare Backend: Invalid API key. Verificați URL-ul (${urlPartial}) și cheia de Service Role care începe cu: ${keyPartial}` };
-    }
-
-    return { success: false, message: `Eroare Backend: ${errorMessage}` };
+    return { success: false, message: "A apărut o eroare de rețea. Vă rugăm să încercați din nou mai târziu." };
   }
 }
