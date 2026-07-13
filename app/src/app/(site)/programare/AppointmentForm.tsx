@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { Send, Lock } from "lucide-react";
-import { supabase } from "@/lib/supabase";
 import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+
+import { submitAppointmentFormServer } from "../../../actions";
 
 // --- STRATUL 1: SCHEMA DE VALIDARE (Zod) ---
 const formSchema = z.object({
@@ -82,14 +83,6 @@ export default function AppointmentForm() {
       return;
     }
 
-    // Pre-verificare variabile de mediu
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-    if (!supabaseUrl || !supabaseKey) {
-      setGlobalError("A apărut o eroare de configurare. Vă rugăm să ne contactați telefonic.");
-      return;
-    }
-
     try {
       // STRATUL 4: IGIENIZARE ANTI-XSS PENTRU MESAJ
       const sanitizedMessage = data.message ? escapeHtml(data.message) : null;
@@ -102,16 +95,16 @@ export default function AppointmentForm() {
         mesaj: sanitizedMessage,
       };
 
-      const { error } = await supabase.from("programari").insert([payload]);
+      const result = await submitAppointmentFormServer(payload);
 
-      if (error) {
-        throw error;
+      if (!result.success) {
+        throw new Error(result.message || "Eroare necunoscută.");
       }
 
       setSubmitted(true);
       reset();
     } catch (error) {
-      console.error("Eroare la trimiterea formularului spre Supabase:", error);
+      console.error("Eroare la trimiterea formularului spre server:", error);
       // STRATUL 4: MASCĂ PENTRU ERORI (Information Disclosure Prevention)
       setGlobalError("A apărut o eroare de rețea. Vă rugăm să încercați din nou mai târziu.");
     }

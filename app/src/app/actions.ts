@@ -49,3 +49,32 @@ export async function submitContactForm(formData: FormData) {
     };
   }
 }
+
+export async function submitAppointmentFormServer(data: {
+  nume: string;
+  telefon: string;
+  email?: string | null;
+  pachet?: string | null;
+  mesaj?: string | null;
+}) {
+  const supabaseAdmin = (await import("@/lib/supabase")).getSupabaseAdmin();
+  
+  try {
+    const { error } = await supabaseAdmin
+      .from("programari")
+      .insert([{
+        nume: data.nume,
+        telefon: data.telefon,
+        email: data.email || null,
+        pachet: data.pachet || null,
+        mesaj: data.mesaj || null,
+      }]);
+
+    if (error) throw error;
+    
+    return { success: true };
+  } catch (error) {
+    console.error("Server Action Supabase Error:", error);
+    return { success: false, message: "A apărut o eroare de rețea. Vă rugăm să încercați din nou mai târziu." };
+  }
+}

@@ -18,3 +18,12 @@ export const supabase = createClient(
   supabaseUrl,
   supabaseKey
 );
+
+export const getSupabaseAdmin = () => {
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!serviceRoleKey) {
+    console.warn("[Supabase] WARNING: SUPABASE_SERVICE_ROLE_KEY is missing. Admin operations might fail.");
+    return createClient(supabaseUrl, 'placeholder-admin-key');
+  }
+  return createClient(supabaseUrl, serviceRoleKey);
+};
