@@ -7,12 +7,20 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
-import { submitAppointmentFormServer } from "../../../actions";
+import { submitAppointmentFormServer } from "@/app/actions";
 
 // --- STRATUL 1: SCHEMA DE VALIDARE (Zod) ---
 const formSchema = z.object({
-  name: z.string().trim().min(3, "Numele trebuie să conțină cel puțin 3 caractere."),
-  phone: z.string().trim().min(10, "Numărul de telefon trebuie să conțină cel puțin 10 cifre.").max(15, "Numărul de telefon este prea lung."),
+  name: z.string()
+    .trim()
+    .min(3, "Numele trebuie să conțină cel puțin 3 caractere.")
+    .regex(/^[a-zA-ZăâîșțĂÂÎȘȚ\s\-]+$/, "Numele poate conține doar litere."),
+  phone: z.string()
+    .trim()
+    .min(10, "Numărul de telefon este prea scurt.")
+    .max(20, "Numărul de telefon este prea lung.")
+    .regex(/^[\d\+\s\-\(\)]+$/, "Numărul poate conține doar cifre și simbolurile +, -, (, )")
+    .refine((val) => val.replace(/[^0-9]/g, "").length >= 10, "Trebuie să conțină minim 10 cifre."),
   email: z.string().trim().email("Adresa de email nu este validă.").optional().or(z.literal("")),
   pachet: z.string().optional(),
   message: z.string().trim().optional(),

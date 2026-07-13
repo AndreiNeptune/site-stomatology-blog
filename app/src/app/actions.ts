@@ -1,51 +1,61 @@
-import { supabase } from "@/lib/supabase";
+"use server";
+
+import * as z from "zod";
+
+const formSchema = z.object({
+  nume: z.string()
+    .trim()
+    .min(3, "Numele trebuie să conțină cel puțin 3 caractere.")
+    .regex(/^[a-zA-ZăâîșțĂÂÎȘȚ\s\-]+$/, "Numele poate conține doar litere și spații."),
+  telefon: z.string()
+    .trim()
+    .min(10, "Numărul de telefon este prea scurt.")
+    .max(20, "Numărul de telefon este prea lung.")
+    .regex(/^[\d\+\s\-\(\)]+$/, "Numărul de telefon este invalid.")
+    .refine((val) => val.replace(/[^0-9]/g, "").length >= 10, "Telefonul trebuie să conțină minim 10 cifre."),
+  email: z.string().trim().email("Email invalid.").optional().or(z.literal("")).nullable(),
+  pachet: z.string().optional().nullable(),
+  mesaj: z.string().trim().optional().nullable(),
+});
 
 export async function submitContactForm(formData: FormData) {
   const honeypot = formData.get("bot-field");
   if (honeypot) {
-    // Dacă honeypot-ul este completat, este probabil un bot.
     return { success: true, message: "Mesaj trimis cu succes." };
   }
 
-  const nume = formData.get("name");
-  const email = formData.get("email");
-  const telefon = formData.get("phone");
-  const mesaj = formData.get("message");
+  const rawData = {
+    nume: formData.get("name")?.toString() || "",
+    email: formData.get("email")?.toString() || "",
+    telefon: formData.get("phone")?.toString() || "",
+    mesaj: formData.get("message")?.toString() || "",
+  };
 
-  if (!nume || !email || !mesaj) {
-    return { success: false, message: "Te rugăm să completezi toate câmpurile obligatorii." };
+  const parsed = formSchema.safeParse(rawData);
+  if (!parsed.success) {
+    return { success: false, message: "Datele introduse nu sunt valide. Verificați numărul de telefon și numele." };
   }
 
   try {
-    const { error } = await supabase
+    const supabaseAdmin = (await import("@/lib/supabase")).getSupabaseAdmin();
+    const { error } = await supabaseAdmin
       .from("programari")
-      .insert([
-        {
-          nume,
-          email,
-          telefon,
-          mesaj,
-        },
-      ]);
+      .insert([parsed.data]);
 
     if (error) {
       console.error("Supabase Error:", error);
-      
-      // Special handle for missing configuration which we check in supabase.ts
       if (error.message?.includes("URL") || error.message?.includes("key")) {
          return { success: false, message: "Eroare de configurare pe server." };
       }
-      
       throw error;
     }
 
     return { success: true, message: "Mesaj trimis cu succes!" };
   } catch (error) {
     console.error("Eroare la trimiterea formularului spre Supabase:", error);
-    const message = error instanceof Error ? error.message : "A apărut o eroare la trimiterea mesajului.";
     return { 
       success: false, 
-      message: message
+      message: "A apărut o eroare la trimiterea mesajului."
     };
   }
 }
@@ -57,18 +67,16 @@ export async function submitAppointmentFormServer(data: {
   pachet?: string | null;
   mesaj?: string | null;
 }) {
-  const supabaseAdmin = (await import("@/lib/supabase")).getSupabaseAdmin();
-  
+  const parsed = formSchema.safeParse(data);
+  if (!parsed.success) {
+    return { success: false, message: "Datele introduse nu sunt valide. Verificați numărul de telefon și numele." };
+  }
+
   try {
+    const supabaseAdmin = (await import("@/lib/supabase")).getSupabaseAdmin();
     const { error } = await supabaseAdmin
       .from("programari")
-      .insert([{
-        nume: data.nume,
-        telefon: data.telefon,
-        email: data.email || null,
-        pachet: data.pachet || null,
-        mesaj: data.mesaj || null,
-      }]);
+      .insert([parsed.data]);
 
     if (error) throw error;
     
