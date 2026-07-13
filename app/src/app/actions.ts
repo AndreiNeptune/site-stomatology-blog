@@ -89,8 +89,9 @@ export async function submitAppointmentFormServer(data: {
     if (error) throw error;
     
     return { success: true };
-  } catch (error) {
+  } catch (error: any) {
     console.error("Server Action Supabase Error:", error);
-    return { success: false, message: "A apărut o eroare de rețea. Vă rugăm să încercați din nou mai târziu." };
+    const errorMessage = error?.message || error?.details || "Eroare necunoscută la Supabase";
+    return { success: false, message: `Eroare Backend: ${errorMessage}` };
   }
 }

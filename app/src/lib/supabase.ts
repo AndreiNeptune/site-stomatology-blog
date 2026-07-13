@@ -22,8 +22,7 @@ export const supabase = createClient(
 export const getSupabaseAdmin = () => {
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!serviceRoleKey) {
-    console.warn("[Supabase] WARNING: SUPABASE_SERVICE_ROLE_KEY is missing. Admin operations might fail.");
-    return createClient(supabaseUrl, 'placeholder-admin-key');
+    throw new Error("Lipsește SUPABASE_SERVICE_ROLE_KEY din variabilele de mediu Vercel! Bifați 'Production' la variabilă în Vercel și dați Redeploy.");
   }
   return createClient(supabaseUrl, serviceRoleKey);
 };
