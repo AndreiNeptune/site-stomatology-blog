@@ -6,16 +6,18 @@ const formSchema = z.object({
   nume: z.string()
     .trim()
     .min(3, "Numele trebuie să conțină cel puțin 3 caractere.")
+    .max(100, "Numele este prea lung.")
     .regex(/^[a-zA-ZăâîșțĂÂÎȘȚ\s\-]+$/, "Numele poate conține doar litere și spații."),
   telefon: z.string()
     .trim()
     .min(10, "Numărul de telefon este prea scurt.")
     .max(20, "Numărul de telefon este prea lung.")
     .regex(/^[\d\+\s\-\(\)]+$/, "Numărul de telefon este invalid.")
-    .refine((val) => val.replace(/[^0-9]/g, "").length >= 10, "Telefonul trebuie să conțină minim 10 cifre."),
+    .refine((val) => val.replace(/[^0-9]/g, "").length >= 10, "Telefonul trebuie să conțină minim 10 cifre.")
+    .refine((val) => val.replace(/[^0-9]/g, "").length <= 15, "Telefonul trebuie să conțină maxim 15 cifre."),
   email: z.string().trim().email("Email invalid.").optional().or(z.literal("")).nullable(),
   pachet: z.string().optional().nullable(),
-  mesaj: z.string().trim().optional().nullable(),
+  mesaj: z.string().trim().max(1000, "Mesajul este prea lung (maxim 1000 caractere).").optional().nullable(),
 });
 
 export async function submitContactForm(formData: FormData) {

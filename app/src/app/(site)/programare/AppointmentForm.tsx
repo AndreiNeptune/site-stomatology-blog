@@ -14,16 +14,18 @@ const formSchema = z.object({
   name: z.string()
     .trim()
     .min(3, "Numele trebuie să conțină cel puțin 3 caractere.")
+    .max(100, "Numele este prea lung.")
     .regex(/^[a-zA-ZăâîșțĂÂÎȘȚ\s\-]+$/, "Numele poate conține doar litere."),
   phone: z.string()
     .trim()
     .min(10, "Numărul de telefon este prea scurt.")
     .max(20, "Numărul de telefon este prea lung.")
     .regex(/^[\d\+\s\-\(\)]+$/, "Numărul poate conține doar cifre și simbolurile +, -, (, )")
-    .refine((val) => val.replace(/[^0-9]/g, "").length >= 10, "Trebuie să conțină minim 10 cifre."),
+    .refine((val) => val.replace(/[^0-9]/g, "").length >= 10, "Trebuie să conțină minim 10 cifre.")
+    .refine((val) => val.replace(/[^0-9]/g, "").length <= 15, "Trebuie să conțină maxim 15 cifre."),
   email: z.string().trim().email("Adresa de email nu este validă.").optional().or(z.literal("")),
   pachet: z.string().optional(),
-  message: z.string().trim().optional(),
+  message: z.string().trim().max(1000, "Mesajul este prea lung (maxim 1000 caractere).").optional(),
   // STRATUL 3: TEHNICA HONEYPOT (câmp ascuns)
   hp_company: z.string().max(0, "Bot detectat").optional(),
 });
