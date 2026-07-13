@@ -22,7 +22,12 @@ export const supabase = createClient(
 export const getSupabaseAdmin = () => {
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!serviceRoleKey) {
-    throw new Error("Lipsește SUPABASE_SERVICE_ROLE_KEY din variabilele de mediu Vercel! Bifați 'Production' la variabilă în Vercel și dați Redeploy.");
+    throw new Error("Lipsește SUPABASE_SERVICE_ROLE_KEY din Vercel! (Verifică setările de Environment Variables)");
   }
+  
+  if (!supabaseUrl || supabaseUrl.includes('placeholder')) {
+    throw new Error("Lipsește NEXT_PUBLIC_SUPABASE_URL din Vercel! (Verifică setările de Environment Variables)");
+  }
+
   return createClient(supabaseUrl, serviceRoleKey);
 };
