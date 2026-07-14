@@ -3,7 +3,9 @@ import { Plus_Jakarta_Sans, Playfair_Display, Montserrat } from "next/font/googl
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FloatingCTA from "@/components/FloatingCTA";
+import dynamic from "next/dynamic";
+
+const DynamicFloatingCTA = dynamic(() => import("@/components/FloatingCTA"), { ssr: false });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -96,7 +98,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <FloatingCTA />
+        <DynamicFloatingCTA />
       </body>
     </html>
   );
