@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Award, Gem, SmilePlus, Heart } from "lucide-react";
+import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 
 interface TrustPillar {
@@ -132,7 +133,9 @@ export default function TrustSection() {
           <div className="relative rounded-3xl overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0 gradient-hero" />
-            <div className="absolute inset-0 trust-bg bg-cover bg-center opacity-10" />
+            <div className="absolute inset-0 opacity-10">
+              <Image src="/images/hero-bg.png" alt="Trust background" fill className="object-cover object-center" />
+            </div>
 
             {/* Decorative blobs */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary-300/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />

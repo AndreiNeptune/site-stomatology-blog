@@ -141,9 +141,6 @@ body {
 }
 
 /* ===== ANIMATION UTILITIES ===== */
-.trust-bg {
-  background-image: url("/images/hero-bg.png");
-}
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }

@@ -21,7 +21,6 @@ export default function Hero() {
           fill
           className="object-cover object-center"
           priority
-          quality={90}
         />
         {/* Gradient Overlays — deep rose */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-900/80 to-primary-950/60" />
