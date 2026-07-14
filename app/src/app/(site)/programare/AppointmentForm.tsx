@@ -193,6 +193,7 @@ export default function AppointmentForm() {
           <input
             type="text"
             id="name"
+            autoComplete="name"
             {...register("name")}
             className="w-full px-4 py-3 rounded-xl bg-neutral-50/50 border border-neutral-200 text-neutral-900 placeholder:text-neutral-400 text-sm focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all"
             placeholder="Maria Popescu"
@@ -209,6 +210,7 @@ export default function AppointmentForm() {
           <input
             type="tel"
             id="phone"
+            autoComplete="tel"
             {...register("phone")}
             className="w-full px-4 py-3 rounded-xl bg-neutral-50/50 border border-neutral-200 text-neutral-900 placeholder:text-neutral-400 text-sm focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all"
             placeholder="07XX XXX XXX"
@@ -226,6 +228,7 @@ export default function AppointmentForm() {
         <input
           type="email"
           id="email"
+          autoComplete="email"
           {...register("email")}
           className="w-full px-4 py-3 rounded-xl bg-neutral-50/50 border border-neutral-200 text-neutral-900 placeholder:text-neutral-400 text-sm focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all"
           placeholder="email@exemplu.ro"
