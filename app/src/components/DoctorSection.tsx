@@ -58,7 +58,7 @@ export default function DoctorSection() {
               {/* Blush background layers removed as requested */}
 
               {/* Photo card */}
-              <div className="relative rounded-[2.5rem] overflow-hidden shadow-elevated aspect-[3/4]">
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-elevated aspect-[3/4] border-[8px] border-white">
                 <Image
                   src="/images/portofoliu/IMG_6546.webp"
                   alt={`${DOCTOR_NAME} — ${DOCTOR_TITLE}`}
