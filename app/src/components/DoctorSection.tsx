@@ -55,9 +55,7 @@ export default function DoctorSection() {
           {/* ── IMAGE COLUMN ── */}
           <AnimatedSection direction="left">
             <div className="relative">
-              {/* Blush background layers */}
-              <div className="absolute -top-8 -left-8 w-3/4 h-3/4 bg-primary-100/60 rounded-[3rem] -z-10" />
-              <div className="absolute -bottom-8 -right-8 w-2/3 h-2/3 bg-accent-100/60 rounded-[3rem] -z-10" />
+              {/* Blush background layers removed as requested */}
 
               {/* Photo card */}
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-elevated aspect-[3/4]">
