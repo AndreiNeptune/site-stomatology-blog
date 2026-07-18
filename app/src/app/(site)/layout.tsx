@@ -93,9 +93,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Dr. Bianca Ionescu",
+    "url": "https://drbiancaionescu.ro",
+    "image": "https://drbiancaionescu.ro/images/logo-pink.png",
+    "description": "Dr. Bianca Ionescu este clinica stomatologică premium din București, dedicată rezultatelor estetice elegante."
+  };
+
   return (
     <html lang="ro" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${montserrat.variable} ${plusJakartaSans.variable} ${playfairDisplay.variable} font-sans antialiased`} suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />

@@ -73,8 +73,26 @@ export default async function BlogPostPage({ params }: Props) {
       })
     : "";
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "image": imageUrl ? [imageUrl] : [],
+    "datePublished": post.publishedAt,
+    "dateModified": post.publishedAt,
+    "author": [{
+      "@type": "Person",
+      "name": post.author?.name || "Echipa Dr. Bianca Ionescu",
+      "url": "https://drbiancaionescu.ro"
+    }]
+  };
+
   return (
     <div className="bg-background min-h-screen pt-32 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12">
           
