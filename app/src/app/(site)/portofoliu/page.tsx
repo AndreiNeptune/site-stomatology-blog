@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import AnimatedSection from "@/components/AnimatedSection";
 import PortfolioGrid from "@/components/PortfolioGrid";
+import TestimonialVideo from "@/components/TestimonialVideo";
 import { Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -31,6 +32,8 @@ export default function PortfolioPage() {
         
         <PortfolioGrid />
       </div>
+      
+      <TestimonialVideo />
     </main>
   );
 }

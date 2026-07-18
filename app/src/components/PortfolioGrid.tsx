@@ -17,6 +17,16 @@ interface PortfolioItem {
 
 // Generăm lista de itemi bazat pe fișierele din folder
 const allItems: PortfolioItem[] = [
+  { id: "fatete-1", src: "/images/portofoliu/portofoliu-fatete-121629.webp", type: "image", category: "Estetică Dentară", alt: "Rezultat fațete dentare - Caz 1" },
+  { id: "fatete-2", src: "/images/portofoliu/portofoliu-fatete-121631.webp", type: "image", category: "Estetică Dentară", alt: "Rezultat fațete dentare - Caz 2" },
+  { id: "fatete-3", src: "/images/portofoliu/portofoliu-fatete-121631-1.webp", type: "image", category: "Estetică Dentară", alt: "Rezultat fațete dentare - Caz 3" },
+  { id: "fatete-4", src: "/images/portofoliu/portofoliu-fatete-121633.webp", type: "image", category: "Estetică Dentară", alt: "Rezultat fațete dentare - Caz 4" },
+  { id: "fatete-5", src: "/images/portofoliu/portofoliu-fatete-121634.webp", type: "image", category: "Estetică Dentară", alt: "Rezultat fațete dentare - Caz 5" },
+  { id: "fatete-6", src: "/images/portofoliu/portofoliu-fatete-121634-1.webp", type: "image", category: "Estetică Dentară", alt: "Rezultat fațete dentare - Caz 6" },
+  { id: "fatete-7", src: "/images/portofoliu/portofoliu-fatete-121635.webp", type: "image", category: "Estetică Dentară", alt: "Rezultat fațete dentare - Caz 7" },
+  { id: "fatete-vid-1", src: "/images/portofoliu/portofoliu-fatete-video-1.mp4", type: "video", category: "Estetică Dentară", alt: "Prezentare video fațete 1" },
+  { id: "fatete-vid-2", src: "/images/portofoliu/portofoliu-fatete-video-2.mp4", type: "video", category: "Estetică Dentară", alt: "Prezentare video fațete 2" },
+  { id: "fatete-vid-3", src: "/images/portofoliu/portofoliu-fatete-video-3.mp4", type: "video", category: "Estetică Dentară", alt: "Prezentare video fațete 3" },
   { id: "IMG_5894", src: "/images/portofoliu/IMG_5894.webp", type: "image", category: "Implantologie", alt: "Rezultat implant dentar - Caz clinic 1" },
   { id: "IMG_5895", src: "/images/portofoliu/IMG_5895.webp", type: "image", category: "Implantologie", alt: "Rezultat implant dentar - Caz clinic 2" },
   { id: "IMG_5900", src: "/images/portofoliu/IMG_5900.webp", type: "image", category: "Implantologie", alt: "Rezultat implant dentar - Caz clinic 3" },

@@ -41,15 +41,6 @@ const quickLinks = [
   { label: "Contact", href: "/programare" },
 ];
 
-const serviceLinks = [
-  "Fațete Dentare",
-  "Implanturi Dentare",
-  "Albire Profesională",
-  "Coroane Dentare",
-  "Aparate Dentare",
-  "Protetică Dentară",
-];
-
 const legalLinks = [
   { label: "Politica de Confidențialitate", href: "/politica-de-confidentialitate" },
   { label: "Politica de Cookies", href: "/politica-de-cookies" },

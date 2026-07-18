@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import PostCard from "@/components/blog/PostCard";
 import BlogSearchBar from "@/components/blog/BlogSearchBar";
 import RecentProceduresSidebar from "@/components/blog/RecentProceduresSidebar";

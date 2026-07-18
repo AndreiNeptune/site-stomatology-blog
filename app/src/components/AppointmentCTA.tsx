@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, Calendar, ArrowRight, Sparkles } from "lucide-react";
+import { Phone, ArrowRight, Sparkles } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 export default function AppointmentCTA() {
