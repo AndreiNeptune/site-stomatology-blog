@@ -4,6 +4,7 @@ import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import dynamic from "next/dynamic";
+import { VisualEditing } from "next-sanity/visual-editing";
 
 const DynamicFloatingCTA = dynamic(() => import("@/components/FloatingCTA"));
 
@@ -99,6 +100,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <DynamicFloatingCTA />
+        <VisualEditing />
       </body>
     </html>
   );
