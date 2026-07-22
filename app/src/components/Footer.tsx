@@ -8,8 +8,8 @@ import { submitContactForm } from "../app/actions";
 import { cn } from "@/lib/utils";
 
 // ─── CONTACT DETAILS — UPDATE THESE ─────────────────────────────────────────
-const PHONE_DISPLAY   = "07__ ___ ___";                       // TODO
-const PHONE_LINK      = "tel:07XXXXXXXX";                     // TODO
+const PHONE_DISPLAY   = "0726 206 012 / 0799 999 200";
+const PHONE_LINK      = "tel:0726206012";
 const EMAIL           = "contact@drbiancaionescu.ro";              // TODO
 const ADDRESS_LINE1   = "Str. [Adresa Clinicii]";             // TODO
 const ADDRESS_LINE2   = "Sector __, București";               // TODO
@@ -165,8 +165,9 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-primary-500 shrink-0" />
-                <span className="text-sm text-neutral-400">
-                  Luni – Vineri: 10:00 – 20:00
+                <span className="text-sm text-neutral-400 flex flex-col">
+                  <span className="font-semibold text-neutral-300">Programări telefonice:</span>
+                  <span>Luni – Vineri: 12:00 – 20:00</span>
                 </span>
               </li>
             </ul>

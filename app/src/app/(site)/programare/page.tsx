@@ -3,8 +3,8 @@ import AnimatedSection from "@/components/AnimatedSection";
 import AppointmentForm from "./AppointmentForm";
 
 // ─── CONTACT DETAILS — UPDATE THESE ─────────────────────────────────────────
-const PHONE_DISPLAY  = "07__ ___ ___";                    // TODO
-const PHONE_LINK     = "tel:07XXXXXXXX";                  // TODO
+const PHONE_DISPLAY  = "0726 206 012 / 0799 999 200";
+const PHONE_LINK     = "tel:0726206012";
 const EMAIL          = "contact@drbiancaionescu.ro";           // TODO
 const ADDRESS_LINE1  = "Str. [Adresa Clinicii]";          // TODO
 const ADDRESS_LINE2  = "Sector __, București";            // TODO
@@ -96,9 +96,9 @@ export default function ProgramarePage() {
                       <Clock className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
-                      <p className="font-semibold text-neutral-900 mb-1">Program</p>
+                      <p className="font-semibold text-neutral-900 mb-1">Programări Telefonice</p>
                       <p className="text-sm text-neutral-600">
-                        Luni – Vineri: 10:00 – 20:00
+                        Luni – Vineri: 12:00 – 20:00
                       </p>
                     </div>
                   </li>

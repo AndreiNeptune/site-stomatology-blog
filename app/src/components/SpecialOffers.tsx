@@ -39,7 +39,7 @@ export default function SpecialOffers() {
         </AnimatedSection>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
           {bundles.map((bundle, index) => (
             <AnimatedSection key={bundle.id} delay={index * 0.1}>
               <div
@@ -121,13 +121,20 @@ export default function SpecialOffers() {
                       </span>
                       <DiscountBadge oldPrice={bundle.oldPrice} newPrice={bundle.newPrice} />
                     </div>
-                    <div className="flex items-baseline gap-1">
-                      <span className={`text-3xl font-extrabold font-display ${bundle.highlight ? "text-white" : "text-neutral-900"}`}>
-                        {bundle.newPrice}
-                      </span>
-                      <span className={`text-sm font-medium ${bundle.highlight ? "text-primary-200/70" : "text-neutral-400"}`}>
-                        RON
-                      </span>
+                    <div className="flex flex-col">
+                      <div className="flex items-baseline gap-1">
+                        <span className={`text-3xl font-extrabold font-display ${bundle.highlight ? "text-white" : "text-neutral-900"}`}>
+                          {bundle.newPrice}
+                        </span>
+                        <span className={`text-sm font-medium ${bundle.highlight ? "text-primary-200/70" : "text-neutral-400"}`}>
+                          RON
+                        </span>
+                      </div>
+                      {bundle.priceDisclaimer && (
+                        <span className={`text-[11px] font-medium leading-tight mt-1 ${bundle.highlight ? "text-primary-200/60" : "text-neutral-400"}`}>
+                          *{bundle.priceDisclaimer}
+                        </span>
+                      )}
                     </div>
                   </div>
 

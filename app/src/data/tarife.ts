@@ -24,9 +24,11 @@ export const tarifeData: CategorieTarife[] = [
     id: "implantologie",
     nume: "Implantologie",
     servicii: [
+      { id: "i0", nume: "Implant dentar", pret: "de la 1400 RON" },
       { id: "i1", nume: "Implant dentar ALPHA BIO", pret: "2500 RON" },
       { id: "i2", nume: "Implant dentar MEGAGEN", pret: "3000 RON" },
       { id: "i3", nume: "Implant dentar STRAUMAN", pret: "4500 RON" },
+      { id: "i_laser", nume: "Tratament Laser", pret: "de la 2000 RON" },
       { id: "i4", nume: "Bont de vindecare", pret: "250 RON" },
       { id: "i5", nume: "Bont protetic", pret: "500 RON" },
       { id: "i6", nume: "Bont multi-unit", pret: "500 RON" },
@@ -143,6 +145,8 @@ export const tarifeData: CategorieTarife[] = [
     nume: "Protetică",
     servicii: [
       { id: "pt1", nume: "Coroană metalo-ceramică / dinte", pret: "700 RON" },
+      { id: "pt_implant", nume: "Coroană pe implant dentar", pret: "de la 1400 RON" },
+      { id: "pt_zirc", nume: "Coroană zirconiu", pret: "750 RON (în funcție de planul de tratament)" },
       { id: "pt2", nume: "Fațetă / coroană full zirconiu / dinte", pret: "1500 RON" },
       { id: "pt3", nume: "Fațetă / coroană zirconiu stratificat / dinte", pret: "1800 RON" },
       { id: "pt4", nume: "Fațetă / coroană presată E-MAX / dinte", pret: "1800 RON" },

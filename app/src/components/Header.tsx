@@ -9,8 +9,8 @@ import Logo from "./Logo";
 import { cn } from "@/lib/utils";
 
 // ─── UPDATE THESE ─────────────────────────────────────────────────────────────
-const PHONE_DISPLAY = "07__ ___ ___"; // TODO
-const PHONE_LINK    = "tel:07XXXXXXXX"; // TODO
+const PHONE_DISPLAY = "0726 206 012 / 0799 999 200";
+const PHONE_LINK    = "tel:0726206012";
 // ──────────────────────────────────────────────────────────────────────────────
 
 const navLinks = [

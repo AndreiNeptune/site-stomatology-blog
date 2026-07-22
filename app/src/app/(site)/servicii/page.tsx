@@ -47,7 +47,7 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="py-24 bg-neutral-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
             {bundles.map((service, index) => (
               <AnimatedSection
                 key={service.id}

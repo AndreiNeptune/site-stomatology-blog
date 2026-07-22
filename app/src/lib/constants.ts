@@ -11,6 +11,7 @@ export interface Bundle {
   highlight?: boolean;
   icon?: React.ReactNode;
   image?: string;
+  priceDisclaimer?: string;
 }
 
 export const bundles: Bundle[] = [
@@ -32,21 +33,22 @@ export const bundles: Bundle[] = [
     newPrice: 2800,
   },
   {
-    id: "Coroane-Dentare",
+    id: "Coroane-Zirconiu",
     badge: "⚙️ Restaurativ",
     badgeColor: "bg-primary-100 text-primary-700",
-    title: "Coroane Dentare",
+    title: "Coroane Zirconiu",
     subtitle: "Restaurează funcționalitatea și estetica dintelui",
     image: "/images/services/coroane-dentare-v3.png",
     description: "Calote dentare care acoperă și protejează dinții deteriorați. Restabilesc rezistența și oferă funcționalitate uimitoare.",
     features: [
       "Evaluare clinică și radiologică",
-      "Coroane din zirconiu sau ceramică premium",
+      "Coroane din zirconiu premium",
       "Adaptare perfectă pe bont sau implant",
       "Estetică naturală de durată",
     ],
-    oldPrice: 1500,
-    newPrice: 1200,
+    oldPrice: 1200,
+    newPrice: 750,
+    priceDisclaimer: "în funcție de planul de tratament",
   },
   {
     id: "Implant-Dentar",
@@ -62,8 +64,8 @@ export const bundles: Bundle[] = [
       "Implant din titan biocompatibil",
       "Intervenție minim invazivă fără durere",
     ],
-    oldPrice: 3000,
-    newPrice: 2500,
+    oldPrice: 2500,
+    newPrice: 1400,
     highlight: true,
   },
   {
@@ -151,5 +153,22 @@ export const bundles: Bundle[] = [
     oldPrice: 1800,
     newPrice: 1299,
     highlight: true,
+  },
+  {
+    id: "Tratament-Laser",
+    badge: "🔬 Inovator",
+    badgeColor: "bg-primary-100 text-primary-700",
+    title: "Tratament Laser",
+    subtitle: "Intervenții precise, fără durere și vindecare rapidă",
+    image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1000&auto=format&fit=crop",
+    description: "Folosim tehnologia laser pentru tratamente minim invazive, cu un grad ridicat de confort pentru pacient și rezultate excepționale.",
+    features: [
+      "Fără freză, vibrații sau durere",
+      "Decontaminare bacteriană eficientă",
+      "Vindecare accelerată a țesuturilor",
+      "Biostimulare pentru recuperare rapidă",
+    ],
+    oldPrice: 2500,
+    newPrice: 2000,
   },
 ];

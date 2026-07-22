@@ -5,8 +5,8 @@ import { Calendar, ArrowRight, MapPin, Clock, Phone, Sparkles } from "lucide-rea
 import Image from "next/image";
 
 // ─── UPDATE THESE ─────────────────────────────────────────────────────────────
-const PHONE_DISPLAY  = "07__ ___ ___";              // TODO
-const PHONE_LINK     = "tel:07XXXXXXXX";            // TODO
+const PHONE_DISPLAY  = "0726 206 012 / 0799 999 200";
+const PHONE_LINK     = "tel:0726206012";
 const ADDRESS        = "Str. [Adresa Clinicii], Sector __, București"; // TODO
 // ──────────────────────────────────────────────────────────────────────────────
 
@@ -34,7 +34,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-32 pb-20 w-full">
-        <div className="max-w-3xl">
+        <div className="max-w-4xl">
 
           {/* Badge */}
           <motion.div
@@ -67,8 +67,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="text-lg sm:text-xl text-white/70 max-w-xl mb-10 leading-relaxed"
           >
-            Estetică dentară delicată, rezultate vizibile, experiență de wellness.
-            La Dr. Bianca Ionescu, fiecare vizită se simte ca o răsfățare — nu ca o procedură medicală.
+            Specialiști în implantologie și estetică dentară. Redobândește-ți zâmbetul cu tratamente moderne, sigure și fără durere. Implanturi dentare premium începând de la 1400 lei.
           </motion.p>
 
           {/* CTAs */}
@@ -99,35 +98,35 @@ export default function Hero() {
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-6 sm:gap-8"
+            className="flex flex-col md:flex-row gap-6 md:gap-8"
           >
             <div className="flex items-center gap-3 text-white/60">
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
                 <Phone className="w-4 h-4 text-primary-300" />
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wider text-white/40">Telefon</p>
-                              <a href={PHONE_LINK} className="text-sm font-semibold text-white hover:text-primary-200 transition-colors">
-                    {PHONE_DISPLAY}
-                  </a>
+                <a href={PHONE_LINK} className="text-sm font-semibold text-white hover:text-primary-200 transition-colors sm:whitespace-nowrap">
+                  {PHONE_DISPLAY}
+                </a>
               </div>
             </div>
             <div className="flex items-center gap-3 text-white/60">
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
                 <Clock className="w-4 h-4 text-primary-300" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-wider text-white/40">Program</p>
-                <p className="text-sm font-semibold text-white">Luni – Vineri: 10:00 – 20:00</p>
+                <p className="text-xs uppercase tracking-wider text-white/40">Programări Telefonice</p>
+                <p className="text-sm font-semibold text-white sm:whitespace-nowrap">Luni – Vineri: 12:00 – 20:00</p>
               </div>
             </div>
             <div className="flex items-center gap-3 text-white/60">
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
                 <MapPin className="w-4 h-4 text-primary-300" />
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wider text-white/40">Adresă</p>
-                <p className="text-sm font-semibold text-white">{ADDRESS}</p>
+                <p className="text-sm font-semibold text-white sm:whitespace-nowrap">{ADDRESS}</p>
               </div>
             </div>
           </motion.div>
