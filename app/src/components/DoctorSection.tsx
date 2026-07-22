@@ -6,7 +6,7 @@ import AnimatedSection from "./AnimatedSection";
 
 // ─── UPDATE THESE VALUES ──────────────────────────────────────────────────────
 const DOCTOR_NAME     = "Dr. Bianca Ionescu";         // TODO: replace
-const DOCTOR_TITLE    = "Medic Specialist Estetică Dentară"; // TODO: replace
+const DOCTOR_TITLE    = "Medic Chirurg Specialist Implantologie și Estetică Dentară"; // TODO: replace
 const DOCTOR_SUBTITLE = "Fondatoare Dr. Bianca Ionescu";       // TODO: replace
 const INSTAGRAM_URL   = "#";   // TODO: add Instagram link
 const FACEBOOK_URL    = "#";   // TODO: add Facebook link
@@ -31,10 +31,10 @@ function FacebookIcon({ className }: { className?: string }) {
 }
 
 const achievements = [
-  { icon: <Award className="w-4 h-4" />, label: "Specialist Estetică Dentară" },
-  { icon: <GraduationCap className="w-4 h-4" />, label: "Formare Internațională" },
+  { icon: <Award className="w-4 h-4" />, label: "Medic Chirurg Specialist" },
+  { icon: <GraduationCap className="w-4 h-4" />, label: "Expertiză în Implantologie" },
   { icon: <Star className="w-4 h-4" />, label: "10+ Ani de Experiență" },
-  { icon: <Heart className="w-4 h-4" />, label: "2500+ Clienți Fericiți" },
+  { icon: <Heart className="w-4 h-4" />, label: "Tratamente Fără Durere" },
 ];
 
 export default function DoctorSection() {
@@ -105,18 +105,19 @@ export default function DoctorSection() {
               {/* Bio */}
               <div className="space-y-4 text-neutral-600 text-[15px] leading-relaxed mb-10 border-l-2 border-primary-100 pl-5">
                 <p>
-                  Pasionată de frumusețea autentică și de transformările care schimbă vieți,
-                  a fondat Dr. Bianca Ionescu cu o misiune simplă: stomatologia trebuie să fie o
-                  experiență plăcută, nu una de temut.
+                  Pasionată de chirurgia orală și de reabilitările care schimbă vieți,
+                  a fondat clinica cu o misiune clară: tratamentele complexe, inclusiv intervențiile
+                  chirurgicale, trebuie să fie sigure, minim invazive și complet lipsite de durere.
                 </p>
                 <p>
-                  Specializată în fațete dentare cu aspect ultra-natural, albire profesională
-                  și implanturi estetice, îmbină precizia tehnică cu un simț artistic rafinat.
-                  Fiecare zâmbet creat este unic — la fel ca persoana din spatele lui.
+                  Specializată în implantologie dentară avansată, adiții osoase și chirurgie
+                  parodontală, îmbină precizia tehnică de chirurg cu o grijă deosebită pentru estetică.
+                  Pe lângă intervențiile chirurgicale, realizează cu aceeași dedicare și tratamente de 
+                  estetică dentară — precum fațete sau albiri profesionale — oferind soluții complete pentru zâmbetul tău.
                 </p>
                 <p>
-                  Crede că fiecare client merită atenție completă, empatie autentică și
-                  rezultate care depășesc așteptările.
+                  Crede ferm că fiecare pacient merită o abordare integrată, empatie autentică și
+                  rezultate impecabile pe termen lung.
                 </p>
               </div>
 
