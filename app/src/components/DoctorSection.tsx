@@ -60,7 +60,7 @@ export default function DoctorSection() {
               {/* Photo card */}
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-elevated aspect-[3/4] border-[8px] border-white">
                 <Image
-                  src="/images/portofoliu/IMG_6546.webp"
+                  src="/images/portofoliu/dr Bianca Ionescu.webp"
                   alt={`${DOCTOR_NAME} — ${DOCTOR_TITLE}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
