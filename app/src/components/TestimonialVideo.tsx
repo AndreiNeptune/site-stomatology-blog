@@ -10,12 +10,11 @@ export default function TestimonialVideo() {
 
   const togglePlay = () => {
     if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
+      if (videoRef.current.paused) {
         videoRef.current.play();
+      } else {
+        videoRef.current.pause();
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -34,7 +33,10 @@ export default function TestimonialVideo() {
                 className="w-full h-full object-cover"
                 controls={isPlaying}
                 playsInline
-                onClick={() => isPlaying && togglePlay()}
+                preload="metadata"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                onEnded={() => setIsPlaying(false)}
               />
               {!isPlaying && (
                 <div 
