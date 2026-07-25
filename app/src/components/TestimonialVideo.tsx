@@ -1,23 +1,9 @@
 "use client";
 
 import AnimatedSection from "./AnimatedSection";
-import { Play, Star } from "lucide-react";
-import { useState, useRef } from "react";
+import { Star } from "lucide-react";
 
 export default function TestimonialVideo() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (videoRef.current.paused) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
-      }
-    }
-  };
-
   return (
     <section className="py-24 bg-neutral-50 relative overflow-hidden">
       {/* Decorative background */}
@@ -26,28 +12,15 @@ export default function TestimonialVideo() {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <AnimatedSection className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 lg:order-1 relative">
-            <div className="aspect-[9/16] max-w-sm mx-auto rounded-3xl overflow-hidden shadow-2xl relative bg-black group">
+            <div className="aspect-[9/16] max-w-sm mx-auto relative group">
               <video
-                ref={videoRef}
                 src="/images/portofoliu/testimonial-clienta-fatete.mp4"
-                className="w-full h-full object-cover"
-                controls={isPlaying}
+                poster="/images/portofoliu/testimonial-poster.jpg"
+                className="w-full h-full object-cover rounded-3xl shadow-2xl bg-black"
+                controls
                 playsInline
                 preload="metadata"
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-                onEnded={() => setIsPlaying(false)}
               />
-              {!isPlaying && (
-                <div 
-                  className="absolute inset-0 bg-black/30 flex items-center justify-center cursor-pointer transition-colors group-hover:bg-black/20"
-                  onClick={togglePlay}
-                >
-                  <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center backdrop-blur-sm shadow-xl transition-transform group-hover:scale-110">
-                    <Play className="w-8 h-8 text-primary-600 ml-2" />
-                  </div>
-                </div>
-              )}
             </div>
             {/* Decorative elements */}
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
