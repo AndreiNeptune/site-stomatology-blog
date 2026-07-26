@@ -17,6 +17,13 @@ interface PortfolioItem {
 
 // Generăm lista de itemi bazat pe fișierele din folder
 const allItems: PortfolioItem[] = [
+  { id: "zirconiu-1", src: "/images/portofoliu/dinti-zirconiu-punte-dentara-1.jpeg", type: "image", category: "Estetică Dentară", alt: "Dinți din zirconiu și punte dentară - Rezultat 1" },
+  { id: "zirconiu-2", src: "/images/portofoliu/dinti-zirconiu-punte-dentara-2.jpeg", type: "image", category: "Estetică Dentară", alt: "Dinți din zirconiu și punte dentară - Rezultat 2" },
+  { id: "zirconiu-3", src: "/images/portofoliu/dinti-zirconiu-punte-dentara-3.jpeg", type: "image", category: "Estetică Dentară", alt: "Dinți din zirconiu și punte dentară - Rezultat 3" },
+  { id: "zirconiu-4", src: "/images/portofoliu/dinti-zirconiu-punte-dentara-4.jpeg", type: "image", category: "Estetică Dentară", alt: "Dinți din zirconiu și punte dentară - Rezultat 4" },
+  { id: "zirconiu-5", src: "/images/portofoliu/dinti-zirconiu-punte-dentara-5.jpeg", type: "image", category: "Estetică Dentară", alt: "Dinți din zirconiu și punte dentară - Rezultat 5" },
+  { id: "zirconiu-vid-1", src: "/images/portofoliu/dinti-zirconiu-punte-dentara-video-1.mp4", type: "video", category: "Estetică Dentară", alt: "Prezentare video dinți zirconiu și punte dentară 1" },
+  { id: "zirconiu-vid-2", src: "/images/portofoliu/dinti-zirconiu-punte-dentara-video-2.mp4", type: "video", category: "Estetică Dentară", alt: "Prezentare video dinți zirconiu și punte dentară 2" },
   { id: "fatete-1", src: "/images/portofoliu/portofoliu-fatete-121629.webp", type: "image", category: "Estetică Dentară", alt: "Rezultat fațete dentare - Caz 1" },
   { id: "fatete-2", src: "/images/portofoliu/portofoliu-fatete-121631.webp", type: "image", category: "Estetică Dentară", alt: "Rezultat fațete dentare - Caz 2" },
   { id: "fatete-3", src: "/images/portofoliu/portofoliu-fatete-121631-1.webp", type: "image", category: "Estetică Dentară", alt: "Rezultat fațete dentare - Caz 3" },

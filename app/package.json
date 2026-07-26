@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ffprobe-installer/ffprobe": "^2.1.2",
     "@hookform/resolvers": "^5.4.0",
     "@portabletext/react": "^6.0.3",
     "@sanity/client": "^7.21.0",
