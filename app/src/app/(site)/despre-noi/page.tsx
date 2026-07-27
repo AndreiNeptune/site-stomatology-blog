@@ -315,7 +315,7 @@ export default function AboutPage() {
                     <Calendar className="w-6 h-6" />
                     Programează o Consultație
                   </a>
-                  <a href="tel:0724542600" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full border-2 border-white/20 text-white font-bold text-lg hover:bg-white/10 transition-all">
+                  <a href="tel:0726206012" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full border-2 border-white/20 text-white font-bold text-lg hover:bg-white/10 transition-all">
                     Contactează-ne direct
                   </a>
                 </div>

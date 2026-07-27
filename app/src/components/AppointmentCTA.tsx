@@ -45,11 +45,11 @@ export default function AppointmentCTA() {
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </a>
                   <a
-                    href="tel:0724542600"
+                    href="tel:0726206012"
                     className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white/25 text-white font-semibold text-base transition-all duration-300 hover:bg-white/10 hover:border-white/40"
                   >
                     <Phone className="w-5 h-5" />
-                    0724.542.600
+                    0726 206 012 / 0799 999 200
                   </a>
                 </div>
               </div>

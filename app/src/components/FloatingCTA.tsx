@@ -29,7 +29,7 @@ export default function FloatingCTA() {
           <div className="bg-white/90 backdrop-blur-xl border-t border-neutral-200 px-5 py-3 shadow-elevated">
             <div className="flex items-center justify-between gap-3 max-w-7xl mx-auto">
               <a
-                href="tel:0724542600"
+                href="tel:0726206012"
                 className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-neutral-100 text-neutral-700 font-medium text-sm hover:bg-neutral-200 transition-colors flex-1"
               >
                 <Phone className="w-4 h-4 text-primary-600" />
