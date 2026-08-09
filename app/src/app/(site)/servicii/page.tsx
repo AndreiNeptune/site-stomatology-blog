@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Sparkles,
   ArrowRight,
@@ -5,13 +7,9 @@ import {
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import AppointmentCTA from "@/components/AppointmentCTA";
-import type { Metadata } from "next";
 import { bundles } from "@/lib/constants";
 import Image from "next/image";
 import { getBnrRate } from "@/actions/getBnrRate";
-
-// This becomes a client component to use hooks
-"use client";
 import { useEffect, useState } from "react";
 
 // Remove metadata export since it's a client component now.
