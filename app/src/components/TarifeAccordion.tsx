@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { CategorieTarife } from "@/data/tarife";
 import { getBnrRate } from "@/actions/getBnrRate";
 import { useEffect } from "react";
@@ -53,7 +53,7 @@ export default function TarifeAccordion({ categories }: { categories: CategorieT
           
           <AnimatePresence>
             {openCategory === category.id && (
-              <motion.div
+              <m.div
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
@@ -74,7 +74,7 @@ export default function TarifeAccordion({ categories }: { categories: CategorieT
                     </ul>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
         </div>
