@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m, LazyMotion, domAnimation } from "framer-motion";
 import { Calendar, ArrowRight, MapPin, Clock, Phone, Sparkles } from "lucide-react";
 import Image from "next/image";
 
@@ -12,7 +12,8 @@ const ADDRESS        = "Str. [Adresa Clinicii], Sector __, București"; // TODO
 
 export default function Hero() {
   return (
-    <section id="acasa" className="relative min-h-screen flex items-center overflow-hidden">
+    <LazyMotion features={domAnimation} strict>
+      <section id="acasa" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -37,7 +38,7 @@ export default function Hero() {
         <div className="max-w-4xl">
 
           {/* Badge */}
-          <motion.div
+          <m.div
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -45,10 +46,10 @@ export default function Hero() {
           >
             <Sparkles className="w-3.5 h-3.5 animate-sparkle" />
             Where Beauty Meets Dentistry
-          </motion.div>
+          </m.div>
 
           {/* Headline */}
-          <motion.h1
+          <m.h1
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
@@ -58,20 +59,20 @@ export default function Hero() {
             <span className="bg-gradient-to-r from-primary-200 via-accent-300 to-primary-300 bg-clip-text text-transparent">
               arta noastră
             </span>
-          </motion.h1>
+          </m.h1>
 
           {/* Subtitle */}
-          <motion.p
+          <m.p
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
             className="text-lg sm:text-xl text-white/70 max-w-xl mb-10 leading-relaxed"
           >
             Specialiști în implantologie și estetică dentară. Redobândește-ți zâmbetul cu tratamente moderne, sigure și fără durere. <strong className="text-white">Dantură fixă în 24 de ore.</strong> Implanturi dentare premium de la 350€.
-          </motion.p>
+          </m.p>
 
           {/* CTAs */}
-          <motion.div
+          <m.div
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
@@ -91,10 +92,10 @@ export default function Hero() {
             >
               Descoperă Serviciile
             </a>
-          </motion.div>
+          </m.div>
 
           {/* Quick Info Strip */}
-          <motion.div
+          <m.div
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
@@ -129,12 +130,13 @@ export default function Hero() {
                 <p className="text-sm font-semibold text-white sm:whitespace-nowrap">{ADDRESS}</p>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
-    </section>
+      </section>
+    </LazyMotion>
   );
 }

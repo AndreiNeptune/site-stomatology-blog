@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 import { Play } from "lucide-react";
 
 type Category = "Toate" | "Implantologie" | "Estetică Dentară" | "Ortodonție";
@@ -133,16 +133,17 @@ export default function PortfolioGrid() {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12">
+    <LazyMotion features={domAnimation} strict>
+      <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12">
 
       {/* Grid */}
-      <motion.div 
+      <m.div 
         layout
         className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
       >
         <AnimatePresence>
           {visibleItems.map((item) => (
-            <motion.div
+            <m.div
               key={item.id}
               layout
               initial={{ opacity: 0, scale: 0.9 }}
@@ -166,10 +167,10 @@ export default function PortfolioGrid() {
                   onPlay={() => setPlayingVideo(item.id)} 
                 />
               )}
-            </motion.div>
+            </m.div>
           ))}
         </AnimatePresence>
-      </motion.div>
+      </m.div>
 
       {/* Load More Button */}
       {visibleCount < allItems.length && (
@@ -182,6 +183,7 @@ export default function PortfolioGrid() {
           </button>
         </div>
       )}
-    </div>
+      </div>
+    </LazyMotion>
   );
 }

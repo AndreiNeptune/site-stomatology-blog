@@ -67,6 +67,7 @@ export default function SpecialOffers() {
                     src={bundle.image || "/images/placeholder.jpg"}
                     alt={bundle.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-700 hover:scale-110"
                   />
                   <div className={`absolute inset-0 ${bundle.highlight ? "bg-primary-950/20" : "bg-black/5"}`} />

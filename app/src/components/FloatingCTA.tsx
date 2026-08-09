@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Phone, Calendar } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 
 export default function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,9 +17,10 @@ export default function FloatingCTA() {
   }, []);
 
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.div
+    <LazyMotion features={domAnimation} strict>
+      <AnimatePresence>
+        {isVisible && (
+        <m.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
@@ -44,8 +45,9 @@ export default function FloatingCTA() {
               </a>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       )}
-    </AnimatePresence>
+      </AnimatePresence>
+    </LazyMotion>
   );
 }

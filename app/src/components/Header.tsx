@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import Link from "next/link";
 import Logo from "./Logo";
@@ -40,7 +40,8 @@ export default function Header() {
   }, []);
 
   return (
-    <header
+    <LazyMotion features={domAnimation} strict>
+      <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isSolid
@@ -121,7 +122,7 @@ export default function Header() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -130,7 +131,7 @@ export default function Header() {
           >
             <div className="max-w-7xl mx-auto px-4 py-6 space-y-1">
               {navLinks.map((link, i) => (
-                <motion.div
+                <m.div
                   key={link.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -143,7 +144,7 @@ export default function Header() {
                   >
                     {link.label}
                   </Link>
-                </motion.div>
+                </m.div>
               ))}
               <div className="pt-4 border-t border-primary-100">
                 <Link
@@ -155,10 +156,11 @@ export default function Header() {
                 </Link>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 
-    </header>
+      </header>
+    </LazyMotion>
   );
 }
