@@ -4,12 +4,37 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CategorieTarife } from "@/data/tarife";
+import { getBnrRate } from "@/actions/getBnrRate";
+import { useEffect } from "react";
 
 export default function TarifeAccordion({ categories }: { categories: CategorieTarife[] }) {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [bnrRate, setBnrRate] = useState<number>(5.00);
+
+  useEffect(() => {
+    getBnrRate().then(setBnrRate);
+  }, []);
 
   const toggleCategory = (id: string) => {
     setOpenCategory(openCategory === id ? null : id);
+  };
+
+  const renderPrice = (pret: string) => {
+    if (pret.includes("€")) {
+      const match = pret.match(/(\d+)\s*€/);
+      if (match) {
+        const euroValue = parseInt(match[1], 10);
+        const leiValue = Math.round(euroValue * bnrRate);
+        const cleanPret = pret.replace(/\s*\(\*la curs bnr în lei\)/g, "");
+        return (
+          <div className="flex flex-col items-end">
+            <span>{cleanPret}</span>
+            <span className="text-xs text-primary-500/80 font-medium mt-0.5">{leiValue} LEI</span>
+          </div>
+        );
+      }
+    }
+    return <span>{pret}</span>;
   };
 
   return (
@@ -41,8 +66,8 @@ export default function TarifeAccordion({ categories }: { categories: CategorieT
                       {category.servicii.map((serviciu) => (
                         <li key={serviciu.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-4 hover:bg-neutral-50 transition-colors gap-4">
                           <span className="text-neutral-700 font-medium">{serviciu.nume}</span>
-                          <span className="text-primary-700 font-bold whitespace-nowrap bg-primary-50 px-3 py-1 rounded-lg shrink-0">
-                            {serviciu.pret}
+                          <span className="text-primary-700 font-bold bg-primary-50 px-3 py-1.5 rounded-lg shrink-0">
+                            {renderPrice(serviciu.pret)}
                           </span>
                         </li>
                       ))}

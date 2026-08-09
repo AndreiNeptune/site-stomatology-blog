@@ -1,9 +1,11 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { CheckCircle2, Sparkles, Tag, ArrowRight, Flame } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { bundles } from "@/lib/constants";
 import Image from "next/image";
+import { getBnrRate } from "@/actions/getBnrRate";
 
 function DiscountBadge({ oldPrice, newPrice }: { oldPrice: number; newPrice: number }) {
   const pct = Math.round(((oldPrice - newPrice) / oldPrice) * 100);
@@ -16,6 +18,12 @@ function DiscountBadge({ oldPrice, newPrice }: { oldPrice: number; newPrice: num
 }
 
 export default function SpecialOffers() {
+  const [bnrRate, setBnrRate] = useState<number>(5.00);
+
+  useEffect(() => {
+    getBnrRate().then(setBnrRate);
+  }, []);
+
   return (
     <section id="oferte" className="py-24 lg:py-32 bg-neutral-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -116,26 +124,28 @@ export default function SpecialOffers() {
                   {/* Price */}
                   <div className="mb-5">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className={`text-sm line-through ${bundle.highlight ? "text-primary-300/60" : "text-neutral-400"}`}>
-                        {bundle.oldPrice} RON
-                      </span>
-                      <DiscountBadge oldPrice={bundle.oldPrice} newPrice={bundle.newPrice} />
-                    </div>
-                    <div className="flex flex-col">
-                      <div className="flex items-baseline gap-1">
-                        <span className={`text-3xl font-extrabold font-display ${bundle.highlight ? "text-white" : "text-neutral-900"}`}>
-                          {bundle.newPrice}
-                        </span>
-                        <span className={`text-sm font-medium ${bundle.highlight ? "text-primary-200/70" : "text-neutral-400"}`}>
-                          RON
-                        </span>
-                      </div>
-                      {bundle.priceDisclaimer && (
-                        <span className={`text-[11px] font-medium leading-tight mt-1 ${bundle.highlight ? "text-primary-200/60" : "text-neutral-400"}`}>
-                          *{bundle.priceDisclaimer}
-                        </span>
+                      {bundle.oldPrice > bundle.newPrice && (
+                        <>
+                          <span className={`text-sm line-through ${bundle.highlight ? "text-primary-300/60" : "text-neutral-400"}`}>
+                            {bundle.oldPrice} €
+                          </span>
+                          <DiscountBadge oldPrice={bundle.oldPrice} newPrice={bundle.newPrice} />
+                        </>
                       )}
                     </div>
+                      <div className="flex flex-col">
+                        <div className="flex items-baseline gap-1">
+                          <span className={`text-3xl font-extrabold font-display ${bundle.highlight ? "text-white" : "text-neutral-900"}`}>
+                            {bundle.newPrice}
+                          </span>
+                          <span className={`text-sm font-medium ${bundle.highlight ? "text-primary-200/70" : "text-neutral-400"}`}>
+                            €
+                          </span>
+                        </div>
+                        <span className={`text-sm font-medium leading-tight mt-1 ${bundle.highlight ? "text-primary-200/90" : "text-neutral-500"}`}>
+                          {bundle.pricePrefix ? `${bundle.pricePrefix} ` : ""}{Math.round(bundle.newPrice * bnrRate)} LEI{bundle.priceSuffix ? ` ${bundle.priceSuffix}` : ""}
+                        </span>
+                      </div>
                   </div>
 
                   {/* CTA Button */}

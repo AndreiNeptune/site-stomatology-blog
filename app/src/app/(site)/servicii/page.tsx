@@ -8,14 +8,23 @@ import AppointmentCTA from "@/components/AppointmentCTA";
 import type { Metadata } from "next";
 import { bundles } from "@/lib/constants";
 import Image from "next/image";
+import { getBnrRate } from "@/actions/getBnrRate";
 
-export const metadata: Metadata = {
-  title: "Servicii Stomatologice Premium | Dr. Bianca Ionescu",
-  description:
-    "Descoperă gama de tratamente estetice oferite de Dr. Bianca Ionescu: implanturi dentare, fațete, albire profesională, coroane dentare și ortodonție în București.",
-};
+// This becomes a client component to use hooks
+"use client";
+import { useEffect, useState } from "react";
+
+// Remove metadata export since it's a client component now.
+// Metadata should be moved to layout.tsx or a separate server component if needed, 
+// but for simplicity we'll just remove it here and let the parent layout handle it.
 
 export default function ServicesPage() {
+  const [bnrRate, setBnrRate] = useState<number>(5.00);
+
+  useEffect(() => {
+    getBnrRate().then(setBnrRate);
+  }, []);
+
   return (
     <div className="flex flex-col w-full">
       {/* Page Hero */}
@@ -106,19 +115,28 @@ export default function ServicesPage() {
                     <div className="flex items-end justify-between gap-4 py-6">
                       <div>
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-xs line-through text-neutral-400">
-                            {service.oldPrice} RON
-                          </span>
-                          <span className="px-2 py-0.5 rounded-full bg-red-50 text-red-600 text-[10px] font-bold">
-                            -{Math.round(((service.oldPrice - service.newPrice) / service.oldPrice) * 100)}%
-                          </span>
+                          {service.oldPrice > service.newPrice && (
+                            <>
+                              <span className="text-xs line-through text-neutral-400">
+                                {service.oldPrice} €
+                              </span>
+                              <span className="px-2 py-0.5 rounded-full bg-red-50 text-red-600 text-[10px] font-bold">
+                                -{Math.round(((service.oldPrice - service.newPrice) / service.oldPrice) * 100)}%
+                              </span>
+                            </>
+                          )}
                         </div>
-                        <div className="flex items-baseline gap-1">
-                          <span className="text-3xl font-extrabold text-neutral-900 font-display">
-                            {service.newPrice}
-                          </span>
-                          <span className="text-xs font-medium text-neutral-400 uppercase tracking-wider">
-                            RON
+                        <div className="flex flex-col">
+                          <div className="flex items-baseline gap-1">
+                            <span className="text-3xl font-extrabold text-neutral-900 font-display">
+                              {service.newPrice}
+                            </span>
+                            <span className="text-xs font-medium text-neutral-400 uppercase tracking-wider">
+                              €
+                            </span>
+                          </div>
+                          <span className="text-sm font-medium text-neutral-500 mt-1">
+                            {service.pricePrefix ? `${service.pricePrefix} ` : ""}{Math.round(service.newPrice * bnrRate)} LEI{service.priceSuffix ? ` ${service.priceSuffix}` : ""}
                           </span>
                         </div>
                       </div>

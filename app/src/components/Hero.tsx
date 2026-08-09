@@ -67,7 +67,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="text-lg sm:text-xl text-white/70 max-w-xl mb-10 leading-relaxed"
           >
-            Specialiști în implantologie și estetică dentară. Redobândește-ți zâmbetul cu tratamente moderne, sigure și fără durere. <strong className="text-white">Dantură fixă în 24 de ore.</strong> Implanturi dentare premium începând de la 1750 lei.
+            Specialiști în implantologie și estetică dentară. Redobândește-ți zâmbetul cu tratamente moderne, sigure și fără durere. <strong className="text-white">Dantură fixă în 24 de ore.</strong> Implanturi dentare premium de la 350€.
           </motion.p>
 
           {/* CTAs */}

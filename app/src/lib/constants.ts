@@ -11,7 +11,9 @@ export interface Bundle {
   highlight?: boolean;
   icon?: React.ReactNode;
   image?: string;
-  priceDisclaimer?: string;
+  pricePrefix?: string;
+  priceSuffix?: string;
+  currency?: string;
 }
 
 export const bundles: Bundle[] = [
@@ -29,9 +31,10 @@ export const bundles: Bundle[] = [
       "Aparat dentar fix sau mobil",
       "Monitorizare periodică și ajustări",
     ],
-    oldPrice: 1800,
-    newPrice: 1500,
-    priceDisclaimer: "începând de la 300€ / arcadă",
+    oldPrice: 360,
+    newPrice: 300,
+    pricePrefix: "de la",
+    priceSuffix: "/ arcadă",
   },
   {
     id: "Coroane-Zirconiu",
@@ -47,9 +50,8 @@ export const bundles: Bundle[] = [
       "Adaptare perfectă pe bont sau implant",
       "Estetică naturală de durată",
     ],
-    oldPrice: 1400,
-    newPrice: 1000,
-    priceDisclaimer: "200€",
+    oldPrice: 280,
+    newPrice: 200,
   },
   {
     id: "Implant-Dentar",
@@ -65,9 +67,9 @@ export const bundles: Bundle[] = [
       "Implant din titan biocompatibil",
       "Intervenție minim invazivă fără durere",
     ],
-    oldPrice: 2200,
-    newPrice: 1750,
-    priceDisclaimer: "începând de la 350€",
+    oldPrice: 440,
+    newPrice: 350,
+    pricePrefix: "de la",
     highlight: true,
   },
   {
@@ -84,9 +86,8 @@ export const bundles: Bundle[] = [
       "Curățare și obturare 3D",
       "Salvarea dintelui natural pentru viitor",
     ],
-    oldPrice: 800,
-    newPrice: 600,
-    priceDisclaimer: "120€",
+    oldPrice: 160,
+    newPrice: 120,
   },
   {
     id: "Albirea-Dintilor",
@@ -102,8 +103,8 @@ export const bundles: Bundle[] = [
       "Gel de albire premium, sigur pentru smalț",
       "Zâmbet strălucitor garantat",
     ],
-    oldPrice: 1400,
-    newPrice: 1000,
+    oldPrice: 280,
+    newPrice: 200,
   },
   {
     id: "Detartraj",
@@ -119,15 +120,15 @@ export const bundles: Bundle[] = [
       "Periaj profesional și Airflow",
       "Tratament de remineralizare a smalțului",
     ],
-    oldPrice: 450,
-    newPrice: 300,
+    oldPrice: 90,
+    newPrice: 60,
   },
   {
     id: "Hollywood-Smile",
     badge: "🌟 Estetică",
     badgeColor: "bg-white text-primary-700 border border-primary-200",
     title: "Hollywood Smile",
-    subtitle: "20 Coroane Dentare / Fațete",
+    subtitle: "20 Fațete / Coroane Dentare",
     image: "/images/services/fatete-dentare-v2.png",
     description: "Transformă-ți zâmbetul cu un pachet complet pentru o estetică de vis, cu dinți albi și frumoși.",
     features: [
@@ -136,9 +137,9 @@ export const bundles: Bundle[] = [
       "Armonie facială completă",
       "Rezultat permanent și natural",
     ],
-    oldPrice: 20000,
-    newPrice: 15000,
-    priceDisclaimer: "3000€ (20 coroane)",
+    oldPrice: 4000,
+    newPrice: 3000,
+    currency: "€",
     highlight: true,
   },
   {
@@ -155,7 +156,75 @@ export const bundles: Bundle[] = [
       "Vindecare accelerată a țesuturilor",
       "Biostimulare pentru recuperare rapidă",
     ],
-    oldPrice: 2500,
-    newPrice: 2000,
+    oldPrice: 500,
+    newPrice: 400,
   },
+  {
+    id: "All-on-Four-Megagen",
+    badge: "🦷 Implantologie",
+    badgeColor: "bg-primary-100 text-primary-700",
+    title: "All on Four Megagen",
+    subtitle: "(4 implanturi + lucrare provizorie)",
+    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1000&auto=format&fit=crop",
+    description: "Sistem inovator de restaurare totală a arcadei pe 4 implanturi Megagen, oferind dantură fixă rapid.",
+    features: [
+      "4 Implanturi Megagen",
+      "Lucrare provizorie fixă",
+      "Intervenție rapidă",
+      "Dantură fixă în 24 de ore",
+    ],
+    oldPrice: 1800,
+    newPrice: 1800,
+  },
+  {
+    id: "All-on-Six-Megagen",
+    badge: "🦷 Implantologie",
+    badgeColor: "bg-primary-100 text-primary-700",
+    title: "All on Six Megagen",
+    subtitle: "(6 implanturi)",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1000&auto=format&fit=crop",
+    description: "Restaurare completă și sigură a arcadei pe 6 implanturi Megagen pentru stabilitate maximă.",
+    features: [
+      "6 Implanturi Megagen",
+      "Stabilitate superioară",
+      "Intervenție sigură",
+      "Dantură fixă și funcțională",
+    ],
+    oldPrice: 2500,
+    newPrice: 2500,
+  },
+  {
+    id: "All-on-Four-Sin",
+    badge: "🦷 Implantologie",
+    badgeColor: "bg-primary-100 text-primary-700",
+    title: "All on Four SIN",
+    subtitle: "(4 implanturi + lucrare provizorie)",
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop",
+    description: "Sistem de restaurare a arcadei pe 4 implanturi SIN, oferind o soluție eficientă și rapidă.",
+    features: [
+      "4 Implanturi SIN",
+      "Lucrare provizorie fixă",
+      "Recuperare rapidă",
+      "Funcționalitate imediată",
+    ],
+    oldPrice: 1600,
+    newPrice: 1600,
+  },
+  {
+    id: "All-on-Six-Sin",
+    badge: "🦷 Implantologie",
+    badgeColor: "bg-primary-100 text-primary-700",
+    title: "All on Six SIN",
+    subtitle: "(6 implanturi)",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
+    description: "Restaurare extinsă a arcadei pe 6 implanturi SIN, pentru o distribuție excelentă a forțelor masticatorii.",
+    features: [
+      "6 Implanturi SIN",
+      "Durabilitate crescută",
+      "Estetică naturală",
+      "Confort maxim",
+    ],
+    oldPrice: 1800,
+    newPrice: 1800,
+  }
 ];
