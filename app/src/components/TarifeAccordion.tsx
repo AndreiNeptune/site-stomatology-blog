@@ -26,15 +26,15 @@ export default function TarifeAccordion({ categories }: { categories: CategorieT
         const euroValue = parseInt(match[1], 10);
         const leiValue = Math.round(euroValue * bnrRate);
         const cleanPret = pret.replace(/\s*\(\*la curs bnr în lei\)/g, "");
+        const parts = cleanPret.split("€");
         return (
-          <div className="flex flex-col items-end">
-            <span>{cleanPret}</span>
-            <span className="text-xs text-primary-500/80 font-medium mt-0.5">{leiValue} LEI</span>
-          </div>
+          <span className="text-right whitespace-nowrap">
+            {parts[0]}€ <span className="text-sm font-semibold text-primary-500/90 ml-1">(~{leiValue} LEI)</span>{parts[1]}
+          </span>
         );
       }
     }
-    return <span>{pret}</span>;
+    return <span className="text-right">{pret}</span>;
   };
 
   return (
