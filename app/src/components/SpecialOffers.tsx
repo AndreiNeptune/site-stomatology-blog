@@ -47,9 +47,17 @@ export default function SpecialOffers() {
         </AnimatedSection>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
+        <div className="flex flex-wrap justify-center gap-6 xl:gap-8">
           {bundles.map((bundle, index) => (
-            <AnimatedSection key={bundle.id} delay={index * 0.1}>
+            <AnimatedSection 
+              key={bundle.id} 
+              delay={index * 0.1}
+              className={`w-full sm:w-[calc(50%-12px)] ${
+                index >= bundles.length - 2
+                  ? "lg:w-[calc(50%-12px)] xl:w-[calc(50%-16px)]"
+                  : "lg:w-[calc(25%-18px)] xl:w-[calc(25%-24px)]"
+              }`}
+            >
               <div
                 className={`
                   relative flex flex-col h-full rounded-3xl border transition-all duration-500
