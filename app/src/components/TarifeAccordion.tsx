@@ -29,7 +29,7 @@ export default function TarifeAccordion({ categories }: { categories: CategorieT
         const parts = cleanPret.split("€");
         return (
           <span className="text-right whitespace-nowrap">
-            {parts[0]}€ <span className="text-sm font-semibold text-primary-500/90 ml-1">(~{leiValue} LEI)</span>{parts[1]}
+            {parts[0]}€ <span className="text-xs font-semibold text-neutral-400 ml-1">(*conform curs BNR)</span>{parts[1]}
           </span>
         );
       }

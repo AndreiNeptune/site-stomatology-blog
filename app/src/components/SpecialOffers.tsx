@@ -136,15 +136,25 @@ export default function SpecialOffers() {
                     </div>
                       <div className="flex flex-col">
                         <div className="flex items-baseline gap-1">
+                          {bundle.pricePrefix && (
+                            <span className={`text-sm font-medium mr-1 ${bundle.highlight ? "text-primary-200/90" : "text-neutral-500"}`}>
+                              {bundle.pricePrefix}
+                            </span>
+                          )}
                           <span className={`text-3xl font-extrabold font-display ${bundle.highlight ? "text-white" : "text-neutral-900"}`}>
                             {bundle.newPrice}
                           </span>
                           <span className={`text-sm font-medium ${bundle.highlight ? "text-primary-200/70" : "text-neutral-400"}`}>
                             €
                           </span>
+                          {bundle.priceSuffix && (
+                            <span className={`text-sm font-medium ml-1 ${bundle.highlight ? "text-primary-200/90" : "text-neutral-500"}`}>
+                              {bundle.priceSuffix}
+                            </span>
+                          )}
                         </div>
-                        <span className={`text-sm font-medium leading-tight mt-1 ${bundle.highlight ? "text-primary-200/90" : "text-neutral-500"}`}>
-                          {bundle.pricePrefix ? `${bundle.pricePrefix} ` : ""}{Math.round(bundle.newPrice * bnrRate)} LEI{bundle.priceSuffix ? ` ${bundle.priceSuffix}` : ""}
+                        <span className={`text-xs font-medium leading-tight mt-1 ${bundle.highlight ? "text-primary-200/80" : "text-neutral-400"}`}>
+                          *conform curs BNR
                         </span>
                       </div>
                   </div>
