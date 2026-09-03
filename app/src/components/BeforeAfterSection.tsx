@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useRef, MouseEvent, TouchEvent } from "react";
+import { useState, useRef, MouseEvent as ReactMouseEvent, TouchEvent as ReactTouchEvent, useEffect } from "react";
 import AnimatedSection from "./AnimatedSection";
 import { Sparkles, ArrowLeftRight, ArrowRight } from "lucide-react";
 
@@ -36,28 +36,46 @@ function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleMove = (clientX: number) => {
-    if (!containerRef.current || !isDragging) return;
+    if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const x = clientX - rect.left;
     const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
     setSliderPosition(percentage);
   };
 
-  const handleMouseMove = (e: MouseEvent) => handleMove(e.clientX);
-  const handleTouchMove = (e: TouchEvent) => handleMove(e.touches[0].clientX);
+  useEffect(() => {
+    if (!isDragging) return;
+
+    const onMouseMove = (e: globalThis.MouseEvent) => handleMove(e.clientX);
+    const onTouchMove = (e: globalThis.TouchEvent) => handleMove(e.touches[0].clientX);
+    const onMouseUp = () => setIsDragging(false);
+
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", onMouseUp);
+    window.addEventListener("touchmove", onTouchMove);
+    window.addEventListener("touchend", onMouseUp);
+
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onMouseUp);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onMouseUp);
+    };
+  }, [isDragging]);
 
   return (
     <div className="flex flex-col gap-4">
       <div 
         ref={containerRef}
         className="relative w-full aspect-[3/4] sm:aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-elevated cursor-ew-resize select-none bg-neutral-100"
-        onMouseDown={() => setIsDragging(true)}
-        onMouseUp={() => setIsDragging(false)}
-        onMouseLeave={() => setIsDragging(false)}
-        onMouseMove={handleMouseMove}
-        onTouchStart={() => setIsDragging(true)}
-        onTouchEnd={() => setIsDragging(false)}
-        onTouchMove={handleTouchMove}
+        onMouseDown={(e: ReactMouseEvent) => {
+          setIsDragging(true);
+          handleMove(e.clientX);
+        }}
+        onTouchStart={(e: ReactTouchEvent) => {
+          setIsDragging(true);
+          handleMove(e.touches[0].clientX);
+        }}
       >
         {/* After Image (Background) */}
         <Image
