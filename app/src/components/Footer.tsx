@@ -110,9 +110,9 @@ export default function Footer() {
 
           {/* Column 2: Quick Links + Services */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">
+            <p className="text-white font-bold text-sm uppercase tracking-wider mb-5">
               Navigare
-            </h4>
+            </p>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -129,9 +129,9 @@ export default function Footer() {
 
           {/* Column 3: Contact Info */}
           <div className="flex flex-col">
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">
+            <p className="text-white font-bold text-sm uppercase tracking-wider mb-5">
               Contact & Locație
-            </h4>
+            </p>
             <ul className="space-y-4 mb-8">
               <li>
                 <a
@@ -187,7 +187,7 @@ export default function Footer() {
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-neutral-800/50">
-                  <span className="text-neutral-500 text-xs">Hartă — adaugă link embed Google Maps</span>
+                  <span className="text-neutral-400 text-xs">Hartă — adaugă link embed Google Maps</span>
                 </div>
               )}
             </div>
@@ -196,9 +196,9 @@ export default function Footer() {
           {/* Column 4: Netlify Contact Form */}
           {!isAppointmentPage && (
             <div>
-              <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">
+              <p className="text-white font-bold text-sm uppercase tracking-wider mb-5">
                 Scrie-ne un Mesaj
-              </h4>
+              </p>
 
               {submitted ? (
                 <div className="bg-primary-50 border border-primary-200 rounded-2xl p-6 text-center">
@@ -266,17 +266,27 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-28 md:pb-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-neutral-500 text-xs">
-              © {new Date().getFullYear()} Dr. Bianca Ionescu. Toate drepturile rezervate.
-            </p>
+            <div className="flex flex-col items-center md:items-start gap-1">
+              <p className="text-neutral-400 text-xs">
+                © {new Date().getFullYear()} Dr. Bianca Ionescu. Toate drepturile rezervate.
+              </p>
+              <a 
+                href="https://upscaleinnovation.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-neutral-500 hover:text-neutral-300 text-xs transition-colors"
+              >
+                Powered by Upscale Innovation Group
+              </a>
+            </div>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
               {legalLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-neutral-500 hover:text-neutral-300 text-xs transition-colors"
+                  className="text-neutral-400 hover:text-neutral-200 text-xs transition-colors"
                 >
                   {link.label}
                 </a>

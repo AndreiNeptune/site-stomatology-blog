@@ -20,7 +20,9 @@ export default function TestimonialVideo() {
                 controls
                 playsInline
                 preload="metadata"
-              />
+              >
+                <track kind="captions" srcLang="ro" label="Română" />
+              </video>
             </div>
             {/* Decorative elements */}
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
