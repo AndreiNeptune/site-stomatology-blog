@@ -5,7 +5,7 @@ import AppointmentForm from "./AppointmentForm";
 // ─── CONTACT DETAILS — UPDATE THESE ─────────────────────────────────────────
 const PHONE_DISPLAY  = "0726 206 012 / 0799 999 200";
 const PHONE_LINK     = "tel:0726206012";
-const EMAIL          = "contact@drbiancaionescu.ro";           // TODO
+const EMAIL          = "contact@rapident.ro";           // TODO
 const ADDRESS_LINE1  = "Str. [Adresa Clinicii]";          // TODO
 const ADDRESS_LINE2  = "Sector __, București";            // TODO
 const MAPS_URL       = "https://maps.google.com/?q=Dr+Bianca+Ionescu+Bucuresti"; // TODO

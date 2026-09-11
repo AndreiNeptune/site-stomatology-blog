@@ -63,7 +63,7 @@ export default function DoctorSection() {
                   src="/images/portofoliu/dr Bianca Ionescu.webp"
                   alt={`${DOCTOR_NAME} — ${DOCTOR_TITLE}`}
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 400px, 500px"
                   className="object-cover object-center"
                   quality={90}
                   priority

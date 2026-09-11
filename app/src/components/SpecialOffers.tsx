@@ -170,6 +170,7 @@ export default function SpecialOffers() {
                   {/* CTA Button */}
                   <a
                     href={`/programare?pachet=${encodeURIComponent(bundle.id)}`}
+                    aria-label={`Rezervă Pachetul ${bundle.title}`}
                     className={`
                       group w-full inline-flex items-center justify-center gap-2.5
                       px-6 py-3.5 rounded-2xl font-bold text-sm transition-all duration-300

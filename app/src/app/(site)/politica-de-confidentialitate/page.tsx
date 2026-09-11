@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
           </ul>
 
           <h2 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4">6. Contact</h2>
-          <p>Pentru orice întrebări privind prelucrarea datelor personale, ne puteți contacta la adresa de email: <strong>contact@drbiancaionescu.ro</strong>.</p>
+          <p>Pentru orice întrebări privind prelucrarea datelor personale, ne puteți contacta la adresa de email: <strong>contact@rapident.ro</strong>.</p>
         </div>
       </div>
     </div>

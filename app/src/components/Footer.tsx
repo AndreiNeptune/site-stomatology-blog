@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 // ─── CONTACT DETAILS — UPDATE THESE ─────────────────────────────────────────
 const PHONE_DISPLAY   = "0726 206 012 / 0799 999 200";
 const PHONE_LINK      = "tel:0726206012";
-const EMAIL           = "contact@drbiancaionescu.ro";              // TODO
+const EMAIL           = "contact@rapident.ro";              // TODO
 const ADDRESS_LINE1   = "Str. [Adresa Clinicii]";             // TODO
 const ADDRESS_LINE2   = "Sector __, București";               // TODO
 const MAPS_QUERY      = "Dr+Bianca+Ionescu+Bucuresti";              // TODO: Google Maps query
@@ -276,7 +276,7 @@ export default function Footer() {
                 href="https://upscaleinnovation.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-neutral-500 hover:text-neutral-300 text-xs transition-colors"
+                className="text-neutral-400 hover:text-neutral-200 text-xs transition-colors"
               >
                 Powered by Upscale Innovation Group
               </a>

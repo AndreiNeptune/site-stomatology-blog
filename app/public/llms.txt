@@ -1,0 +1,31 @@
+# Dr. Bianca Ionescu - Informații Clinica Stomatologică
+
+> **Despre:** Acest fișier oferă un sumar optimizat pentru modelele de limbaj și asistenți AI (LLMs) care analizează site-ul rapident.ro.
+
+## Date de Contact și Localizare
+- **Nume Clinică:** Dr. Bianca Ionescu
+- **Website:** https://rapident.ro
+- **Email:** contact@rapident.ro
+- **Telefon:** 0726 206 012 / 0799 999 200
+- **Adresă:** București
+- **Program:** Luni – Vineri: 12:00 – 20:00
+
+## Despre Clinica
+Dr. Bianca Ionescu este o clinică stomatologică premium din București, concentrată pe tratamente fără durere, de estetică dentară și implantologie. Abordarea noastră combină expertiza medicală cu rafinamentul artistic pentru a oferi pacienților zâmbete impecabile, funcționale și armonioase.
+
+## Servicii Principale
+1. **Implantologie:** Refacerea funcționalității și esteticii pentru dinții lipsă prin implanturi de înaltă calitate.
+2. **Estetică Dentară:** Fațete dentare din ceramică, coroane de zirconiu și tratamente de albire dentară profesională.
+3. **Endodonție:** Tratamente de canal precise, folosind tehnici moderne (microscop) pentru salvarea dinților.
+4. **Ortodonție:** Aparate dentare invizibile, metalice sau ceramice, pentru alinierea corectă a dinților.
+5. **Stomatologie Generală & Profilaxie:** Tratamente profilactice cu airflow, detartraj și igienizări profesionale.
+
+## Programări
+Programările se pot face online pe pagina `/programare` sau telefonic la numerele de contact. Oferim evaluare inițială gratuită și plan de tratament transparent, explicând fiecare etapă pacientului.
+
+## Legături Utile
+- Servicii: https://rapident.ro/#servicii
+- Echipa: https://rapident.ro/#doctor
+- Blog: https://rapident.ro/blog
+- Termeni: https://rapident.ro/termeni-si-conditii
+- Confidențialitate: https://rapident.ro/politica-de-confidentialitate

@@ -83,7 +83,7 @@ export default async function BlogPostPage({ params }: Props) {
     "author": [{
       "@type": "Person",
       "name": post.author?.name || "Echipa Dr. Bianca Ionescu",
-      "url": "https://drbiancaionescu.ro"
+      "url": "https://rapident.ro"
     }]
   };
 
@@ -200,7 +200,7 @@ export default async function BlogPostPage({ params }: Props) {
                   </p>
                 </div>
                 <SocialShare
-                  url={`https://drbiancaionescu.ro/blog/${post.slug.current}`}
+                  url={`https://rapident.ro/blog/${post.slug.current}`}
                   title={post.title}
                   description={post.excerpt}
                 />

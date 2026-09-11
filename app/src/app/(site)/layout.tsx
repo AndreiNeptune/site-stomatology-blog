@@ -36,7 +36,7 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://drbiancaionescu.ro"),
+  metadataBase: new URL("https://rapident.ro"),
   title: "Dr. Bianca Ionescu | Where Beauty Meets Dentistry — București",
   description:
     "Dr. Bianca Ionescu este clinica stomatologică premium din București, dedicată rezultatelor estetice elegante. Fațete dentare, albire profesională, implanturi și coroane — toate cu grijă, fără durere. Str. Vulturilor 93A, Sector 3.",
@@ -54,11 +54,19 @@ export const metadata: Metadata = {
     "beauty dentistry",
   ],
   authors: [{ name: "Dr. Bianca Ionescu" }],
+  alternates: {
+    canonical: "https://rapident.ro",
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     title: "Dr. Bianca Ionescu | Where Beauty Meets Dentistry",
     description:
       "Proceduri sigure, complet fără durere, cu rezultate vizibile încă de la prima ședință. Zâmbetul tău, arta noastră.",
-    url: "https://drbiancaionescu.ro",
+    url: "https://rapident.ro",
     siteName: "Dr. Bianca Ionescu",
     locale: "ro_RO",
     type: "website",
@@ -97,9 +105,27 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Dentist",
     "name": "Dr. Bianca Ionescu",
-    "url": "https://drbiancaionescu.ro",
-    "image": "https://drbiancaionescu.ro/images/logo-pink.png",
-    "description": "Dr. Bianca Ionescu este clinica stomatologică premium din București, dedicată rezultatelor estetice elegante."
+    "url": "https://rapident.ro",
+    "image": "https://rapident.ro/images/logo-pink.png",
+    "description": "Dr. Bianca Ionescu este clinica stomatologică premium din București, dedicată rezultatelor estetice elegante.",
+    "telephone": "0726 206 012",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "București",
+      "addressCountry": "RO"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "12:00",
+      "closes": "20:00"
+    }
   };
 
   return (
