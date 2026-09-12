@@ -4,8 +4,8 @@
 
 ## Date de Contact și Localizare
 - **Nume Clinică:** Dr. Bianca Ionescu
-- **Website:** https://rapident.ro
-- **Email:** contact@rapident.ro
+- **Website:** [rapident.ro](https://rapident.ro)
+- **Email:** [contact@rapident.ro](mailto:contact@rapident.ro)
 - **Telefon:** 0726 206 012 / 0799 999 200
 - **Adresă:** București
 - **Program:** Luni – Vineri: 12:00 – 20:00
@@ -24,8 +24,8 @@ Dr. Bianca Ionescu este o clinică stomatologică premium din București, concen
 Programările se pot face online pe pagina `/programare` sau telefonic la numerele de contact. Oferim evaluare inițială gratuită și plan de tratament transparent, explicând fiecare etapă pacientului.
 
 ## Legături Utile
-- Servicii: https://rapident.ro/#servicii
-- Echipa: https://rapident.ro/#doctor
-- Blog: https://rapident.ro/blog
-- Termeni: https://rapident.ro/termeni-si-conditii
-- Confidențialitate: https://rapident.ro/politica-de-confidentialitate
+- Servicii: [Servicii Stomatologice](https://rapident.ro/#servicii)
+- Echipa: [Echipa Medicală](https://rapident.ro/#doctor)
+- Blog: [Blog](https://rapident.ro/blog)
+- Termeni: [Termeni și Condiții](https://rapident.ro/termeni-si-conditii)
+- Confidențialitate: [Politica de Confidențialitate](https://rapident.ro/politica-de-confidentialitate)
