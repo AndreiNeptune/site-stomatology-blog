@@ -226,6 +226,7 @@ export default function Footer() {
                   <input
                     type="text"
                     name="name"
+                    autoComplete="name"
                     placeholder="Nume complet"
                     required
                     className="w-full px-4 py-3 rounded-xl bg-neutral-800/80 border border-neutral-700 text-white placeholder:text-neutral-500 text-sm focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/30 transition-colors"
@@ -233,6 +234,7 @@ export default function Footer() {
                   <input
                     type="email"
                     name="email"
+                    autoComplete="email"
                     placeholder="Email"
                     required
                     className="w-full px-4 py-3 rounded-xl bg-neutral-800/80 border border-neutral-700 text-white placeholder:text-neutral-500 text-sm focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/30 transition-colors"
@@ -240,6 +242,7 @@ export default function Footer() {
                   <input
                     type="tel"
                     name="phone"
+                    autoComplete="tel"
                     placeholder="Telefon"
                     className="w-full px-4 py-3 rounded-xl bg-neutral-800/80 border border-neutral-700 text-white placeholder:text-neutral-500 text-sm focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/30 transition-colors"
                   />
