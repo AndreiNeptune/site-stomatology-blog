@@ -3,13 +3,20 @@ import AnimatedSection from "@/components/AnimatedSection";
 import PortfolioGrid from "@/components/PortfolioGrid";
 import TestimonialVideo from "@/components/TestimonialVideo";
 import { Sparkles } from "lucide-react";
+import { client } from "@/lib/sanity/client";
+import { recentProceduresQuery } from "@/lib/sanity/queries";
+import RecentProceduresSidebar from "@/components/blog/RecentProceduresSidebar";
 
 export const metadata: Metadata = {
   title: "Portofoliu Cazuri Clinice | Dr. Bianca Ionescu",
   description: "Descoperă rezultatele tratamentelor noastre stomatologice: estetică dentară, implantologie, fațete și reabilitări orale complete.",
 };
 
-export default function PortfolioPage() {
+export const revalidate = 60; // Revalidate every 60 seconds to keep recent posts fresh
+
+export default async function PortfolioPage() {
+  const recentProcedures = await client.fetch(recentProceduresQuery);
+
   return (
     <main className="min-h-screen bg-neutral-50 pt-24 lg:pt-32 pb-20 overflow-hidden relative">
       {/* Decorative blobs */}
@@ -34,6 +41,15 @@ export default function PortfolioPage() {
       </div>
       
       <TestimonialVideo />
+
+      {/* Recent Procedures Section */}
+      <div className="max-w-lg mx-auto px-5 sm:px-6 lg:px-8 mt-24">
+        <AnimatedSection direction="up" delay={0.2}>
+          <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-primary-100/50">
+            <RecentProceduresSidebar posts={recentProcedures} />
+          </div>
+        </AnimatedSection>
+      </div>
     </main>
   );
 }
