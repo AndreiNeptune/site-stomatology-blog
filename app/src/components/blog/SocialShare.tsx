@@ -1,6 +1,6 @@
 "use client";
 
-import { Link2, Check, Share2, MessageCircle } from "lucide-react";
+import { Link2, Check, Facebook, Twitter, Linkedin } from "lucide-react";
 import { useState } from "react";
 
 interface SocialShareProps {
@@ -19,19 +19,19 @@ export default function SocialShare({ url, title, description }: SocialShareProp
   const shareLinks = [
     {
       name: "Facebook",
-      icon: MessageCircle,
+      icon: Facebook,
       href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
       color: "hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200",
     },
     {
       name: "Twitter",
-      icon: Share2,
+      icon: Twitter,
       href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
       color: "hover:bg-sky-50 hover:text-sky-500 hover:border-sky-200",
     },
     {
       name: "LinkedIn",
-      icon: Share2,
+      icon: Linkedin,
       href: `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedDesc}`,
       color: "hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200",
     },
