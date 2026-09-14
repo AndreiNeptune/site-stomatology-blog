@@ -14,7 +14,7 @@ const PHONE_LINK    = "tel:0726206012";
 // ──────────────────────────────────────────────────────────────────────────────
 
 const navLinks = [
-  { label: "Acasă", href: "/#acasa" },
+  { label: "Acasă", href: "/" },
   { label: "Despre Noi", href: "/despre-noi" },
   { label: "Servicii", href: "/servicii" },
   { label: "Tarife", href: "/tarife" },
@@ -53,7 +53,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
 
           {/* Logo */}
-          <Link href="/#acasa" className="relative z-10">
+          <Link href="/" className="relative z-10">
             <Logo
               variant={isSolid ? "dark" : "light"}
               size="md"

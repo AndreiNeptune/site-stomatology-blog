@@ -34,7 +34,7 @@ const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const quickLinks = [
-  { label: "Acasă", href: "/#acasa" },
+  { label: "Acasă", href: "/" },
   { label: "Servicii", href: "/#servicii" },
   { label: "De Ce Noi", href: "/#de-ce-noi" },
   { label: "Despre Medic", href: "/#doctor" },
