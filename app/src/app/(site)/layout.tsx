@@ -37,7 +37,7 @@ export const viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rapident.ro"),
-  title: "Dr. Bianca Ionescu | Where Beauty Meets Dentistry — București",
+  title: "Dr. Bianca Ionescu | Stomatologie și Estetică Dentară — București",
   description:
     "Dr. Bianca Ionescu este clinica stomatologică premium din București, dedicată rezultatelor estetice elegante. Fațete dentare, albire profesională, implanturi și coroane — toate cu grijă, fără durere. Str. Vulturilor 93A, Sector 3.",
   keywords: [
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Dr. Bianca Ionescu | Where Beauty Meets Dentistry",
+    title: "Dr. Bianca Ionescu | Stomatologie și Estetică Dentară",
     description:
       "Proceduri sigure, complet fără durere, cu rezultate vizibile încă de la prima ședință. Zâmbetul tău, arta noastră.",
     url: "https://rapident.ro",
@@ -72,18 +72,18 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/logo-pink.png",
-        width: 800,
-        height: 600,
-        alt: "Dr. Bianca Ionescu Logo",
+        url: "/images/og-image-cover.png",
+        width: 1200,
+        height: 630,
+        alt: "Dr. Bianca Ionescu - Cabinet Stomatologic",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Bianca Ionescu | Where Beauty Meets Dentistry",
-    description: "Proceduri sigure, complet fără durere, cu rezultate vizibile încă de la prima ședință.",
-    images: ["/images/logo-pink.png"],
+    title: "Dr. Bianca Ionescu | Stomatologie și Estetică Dentară",
+    description: "Proceduri sigure, complet fără durere, cu rezultate vizibile încă de la prima ședință. Zâmbetul tău, arta noastră.",
+    images: ["/images/og-image-cover.png"],
   },
   icons: {
     icon: "/images/logo-pink.png",
