@@ -61,7 +61,7 @@ export async function submitContactForm(formData: FormData) {
   }
 
   try {
-    const ip = headers().get("x-forwarded-for") || "unknown";
+    const ip = (await headers()).get("x-forwarded-for") || "unknown";
     if (!checkRateLimit(ip)) {
        return { success: false, message: "Vă rugăm să așteptați 30 de secunde înainte de a trimite un nou mesaj." };
     }
@@ -110,7 +110,7 @@ export async function submitAppointmentFormServer(data: {
   }
 
   try {
-    const ip = headers().get("x-forwarded-for") || "unknown";
+    const ip = (await headers()).get("x-forwarded-for") || "unknown";
     if (!checkRateLimit(ip)) {
        return { success: false, message: "Vă rugăm să așteptați 30 de secunde înainte de a trimite un nou mesaj." };
     }
