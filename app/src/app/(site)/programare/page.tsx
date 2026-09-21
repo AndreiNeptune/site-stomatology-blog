@@ -109,11 +109,13 @@ export default function ProgramarePage() {
 
           <div className="lg:col-span-3">
             <AnimatedSection delay={0.2} className="h-full">
-              <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-elevated border border-neutral-100 h-full">
-                <h3 className="text-xl font-bold text-neutral-900 mb-6 font-display">Formular de Programare</h3>
-                <Suspense fallback={<div className="p-4 text-center">Se încarcă formularul...</div>}>
-                  <AppointmentForm />
-                </Suspense>
+              <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-elevated border border-neutral-100 h-full flex flex-col">
+                <h3 className="text-xl font-bold text-neutral-900 mb-6 font-display shrink-0">Formular de Programare</h3>
+                <div className="flex-1 flex flex-col">
+                  <Suspense fallback={<div className="p-4 text-center">Se încarcă formularul...</div>}>
+                    <AppointmentForm />
+                  </Suspense>
+                </div>
               </div>
             </AnimatedSection>
           </div>

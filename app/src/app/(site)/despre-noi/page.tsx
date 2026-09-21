@@ -62,7 +62,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col whitespace-normal">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center pt-24 md:pt-32 overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center pt-24 pb-32 md:pt-32 md:pb-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-900/90 to-primary-800/80 z-10" />
           <Image
@@ -74,7 +74,7 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-12 md:mt-0">
           <AnimatedSection direction="up" className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-primary-300/30 text-primary-200 text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
@@ -83,19 +83,23 @@ export default function AboutPage() {
             <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 font-display">
               Frumusețea începe cu <span className="bg-gradient-to-r from-primary-200 via-accent-300 to-primary-300 bg-clip-text text-transparent">un zâmbet</span>
             </h1>
-            <p className="text-xl text-white/80 mb-8 max-w-2xl leading-relaxed">
+            <p className="text-xl text-white/80 mb-10 max-w-2xl leading-relaxed">
               La Dr. Bianca Ionescu, credem că fiecare femeie merită un zâmbet care o face să strălucească. 
               Îmbinăm estetica delicată cu tehnologia de vârf pentru a crea transformări uimitoare.
             </p>
-            <div className="flex gap-4">
-              <a href="/programare" className="px-8 py-4 rounded-full bg-white text-primary-600 font-bold hover:shadow-xl hover:shadow-white/30 transition-all active:scale-95">
-                Programează o Consultație
+            <div className="flex flex-wrap gap-4">
+              <a href="/programare" className="group relative inline-flex items-center justify-center px-8 py-5 md:px-10 md:py-6 rounded-full bg-white text-primary-600 font-extrabold text-lg md:text-xl shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] hover:-translate-y-2 transition-all duration-500 active:scale-95 overflow-hidden">
+                <span className="relative z-10 flex items-center gap-3">
+                  <Calendar className="w-6 h-6 text-primary-500 group-hover:scale-110 transition-transform duration-300" />
+                  Programează o Consultație
+                </span>
+                <div className="absolute inset-0 bg-primary-50 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-out" />
               </a>
             </div>
           </AnimatedSection>
         </div>
         
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-20" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-t from-background to-transparent z-20 pointer-events-none" />
       </section>
 
       {/* Mission Section */}

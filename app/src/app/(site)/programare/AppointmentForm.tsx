@@ -128,7 +128,7 @@ export default function AppointmentForm() {
 
   if (submitted) {
     return (
-      <div className="bg-primary-50 border border-primary-100 rounded-2xl p-8 text-center h-full flex flex-col items-center justify-center min-h-[300px]">
+      <div className="bg-primary-50 border border-primary-100 rounded-2xl p-8 text-center flex-1 flex flex-col items-center justify-center min-h-[300px]">
         <div className="w-16 h-16 mx-auto rounded-full bg-primary-100 flex items-center justify-center mb-4">
           <Send className="w-8 h-8 text-primary-600" />
         </div>

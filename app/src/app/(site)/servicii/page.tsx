@@ -138,7 +138,7 @@ export default function ServicesPage() {
                             <span className="text-3xl font-extrabold text-neutral-900 font-display">
                               {service.newPrice}
                             </span>
-                            <span className="text-xs font-medium text-neutral-400 uppercase tracking-wider">
+                            <span className="text-2xl font-bold text-neutral-700">
                               €
                             </span>
                           </div>
