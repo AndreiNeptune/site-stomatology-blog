@@ -1,6 +1,22 @@
 "use server";
 
 import * as z from "zod";
+import { headers } from "next/headers";
+
+// Sistem simplu in-memory pentru rate-limiting
+const rateLimitMap = new Map<string, number>();
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const lastSubmit = rateLimitMap.get(ip);
+  if (lastSubmit && now - lastSubmit < 30000) { // 30 secunde
+    return false;
+  }
+  rateLimitMap.set(ip, now);
+  // Curățăm harta dacă devine prea mare
+  if (rateLimitMap.size > 1000) rateLimitMap.clear(); 
+  return true;
+}
 
 const formSchema = z.object({
   nume: z.string()
@@ -45,22 +61,35 @@ export async function submitContactForm(formData: FormData) {
   }
 
   try {
-    const supabaseAdmin = (await import("@/lib/supabase")).getSupabaseAdmin();
-    const { error } = await supabaseAdmin
-      .from("programari")
-      .insert([parsed.data]);
+    const ip = headers().get("x-forwarded-for") || "unknown";
+    if (!checkRateLimit(ip)) {
+       return { success: false, message: "Vă rugăm să așteptați 30 de secunde înainte de a trimite un nou mesaj." };
+    }
 
-    if (error) {
-      console.error("Supabase Error:", error);
-      if (error.message?.includes("URL") || error.message?.includes("key")) {
-         return { success: false, message: "Eroare de configurare pe server." };
-      }
-      throw error;
+    const payload = {
+      ...parsed.data,
+      timestamp: new Date().toISOString()
+    };
+
+    const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+    if (!webhookUrl) {
+      console.error("GOOGLE_SHEETS_WEBHOOK_URL is not defined");
+      return { success: false, message: "Eroare de configurare pe server." };
+    }
+
+    const response = await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+       throw new Error(`Google Sheets Webhook error: ${response.statusText}`);
     }
 
     return { success: true, message: "Mesaj trimis cu succes!" };
   } catch (error) {
-    console.error("Eroare la trimiterea formularului spre Supabase:", error);
+    console.error("Eroare la trimiterea formularului spre Google Sheets:", error);
     return { 
       success: false, 
       message: "A apărut o eroare la trimiterea mesajului."
@@ -81,16 +110,35 @@ export async function submitAppointmentFormServer(data: {
   }
 
   try {
-    const supabaseAdmin = (await import("@/lib/supabase")).getSupabaseAdmin();
-    const { error } = await supabaseAdmin
-      .from("programari")
-      .insert([parsed.data]);
+    const ip = headers().get("x-forwarded-for") || "unknown";
+    if (!checkRateLimit(ip)) {
+       return { success: false, message: "Vă rugăm să așteptați 30 de secunde înainte de a trimite un nou mesaj." };
+    }
 
-    if (error) throw error;
-    
+    const payload = {
+      ...parsed.data,
+      timestamp: new Date().toISOString()
+    };
+
+    const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+    if (!webhookUrl) {
+      console.error("GOOGLE_SHEETS_WEBHOOK_URL is not defined");
+      return { success: false, message: "Eroare de configurare pe server." };
+    }
+
+    const response = await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Google Sheets Webhook error: ${response.statusText}`);
+    }
+
     return { success: true };
   } catch (error: unknown) {
-    console.error("Server Action Supabase Error:", error);
+    console.error("Server Action Google Sheets Error:", error);
     return { success: false, message: "A apărut o eroare de rețea. Vă rugăm să încercați din nou mai târziu." };
   }
 }
