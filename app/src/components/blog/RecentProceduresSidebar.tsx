@@ -3,13 +3,15 @@ import Link from "next/link";
 import { Post } from "@/lib/sanity/types";
 import { urlFor } from "@/lib/sanity/image";
 import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface RecentProceduresSidebarProps {
   posts: Post[];
   locale?: "ro" | "en";
+  variant?: "sidebar" | "grid";
 }
 
-export default function RecentProceduresSidebar({ posts, locale = "ro" }: RecentProceduresSidebarProps) {
+export default function RecentProceduresSidebar({ posts, locale = "ro", variant = "sidebar" }: RecentProceduresSidebarProps) {
   if (!posts || posts.length === 0) return null;
 
   return (
@@ -23,7 +25,9 @@ export default function RecentProceduresSidebar({ posts, locale = "ro" }: Recent
       </div>
 
       {/* Posts List */}
-      <div className="space-y-4">
+      <div className={cn(
+        variant === "grid" ? "grid sm:grid-cols-2 gap-4 lg:gap-6" : "space-y-4"
+      )}>
         {posts.map((post, i) => {
           const title = locale === "en" && post.titleEn ? post.titleEn : post.title;
           const imageUrl = post.mainImage
@@ -40,18 +44,24 @@ export default function RecentProceduresSidebar({ posts, locale = "ro" }: Recent
             <Link
               key={post._id}
               href={`/blog/${post.slug.current}`}
-              className="group flex gap-3 p-3 rounded-2xl hover:bg-primary-50/50 transition-all duration-300"
+              className={cn(
+                "group flex gap-4 p-3 rounded-2xl hover:bg-primary-50/50 transition-all duration-300",
+                variant === "grid" && "p-4 bg-neutral-50/50 hover:bg-white hover:shadow-md border border-neutral-100"
+              )}
               id={`recent-procedure-${i}`}
             >
               {/* Thumbnail */}
-              <div className="relative w-20 h-16 rounded-xl overflow-hidden flex-shrink-0">
+              <div className={cn(
+                "relative rounded-xl overflow-hidden flex-shrink-0",
+                variant === "grid" ? "w-24 h-20" : "w-20 h-16"
+              )}>
                 {imageUrl ? (
                   <Image
                     src={imageUrl}
                     alt={title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="80px"
+                    sizes={variant === "grid" ? "96px" : "80px"}
                   />
                 ) : (
                   <div className="w-full h-full gradient-hero flex items-center justify-center">
@@ -61,8 +71,8 @@ export default function RecentProceduresSidebar({ posts, locale = "ro" }: Recent
               </div>
 
               {/* Info */}
-              <div className="flex-1 min-w-0">
-                <h4 className="text-sm font-semibold text-neutral-700 group-hover:text-primary-600 transition-colors line-clamp-2 leading-snug">
+              <div className="flex-1 min-w-0 flex flex-col justify-center">
+                <h4 className="text-sm font-semibold text-neutral-800 group-hover:text-primary-600 transition-colors line-clamp-2 leading-snug">
                   {title}
                 </h4>
                 <div className="flex items-center gap-2 mt-1">
@@ -86,7 +96,10 @@ export default function RecentProceduresSidebar({ posts, locale = "ro" }: Recent
       {/* View All */}
       <Link
         href="/blog"
-        className="flex items-center justify-center gap-2 mt-6 py-3 rounded-xl border border-primary-100 text-sm font-semibold text-primary-500 hover:bg-primary-50 hover:border-primary-200 transition-all duration-300 group"
+        className={cn(
+          "flex items-center justify-center gap-2 mt-8 py-3 rounded-xl border border-primary-100 text-sm font-semibold text-primary-500 hover:bg-primary-50 hover:border-primary-200 transition-all duration-300 group",
+          variant === "grid" && "max-w-xs mx-auto"
+        )}
       >
         {locale === "ro" ? "Vezi toate articolele" : "View all articles"}
         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

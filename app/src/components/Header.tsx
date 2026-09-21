@@ -1,16 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { m, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Calendar, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import Logo from "./Logo";
 import { cn } from "@/lib/utils";
 
 // ─── UPDATE THESE ─────────────────────────────────────────────────────────────
-const PHONE_DISPLAY = "0726 206 012 / 0799 999 200";
-const PHONE_LINK    = "tel:0726206012";
+const PHONE_1 = "0726 206 012";
+const PHONE_2 = "0799 999 200";
+const PHONE_LINK_1 = "tel:0726206012";
+const PHONE_LINK_2 = "tel:0799999200";
 // ──────────────────────────────────────────────────────────────────────────────
 
 const navLinks = [
@@ -27,6 +29,21 @@ export default function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isPhoneOpen, setIsPhoneOpen] = useState(false);
+  const phoneDropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close phone dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (phoneDropdownRef.current && !phoneDropdownRef.current.contains(event.target as Node)) {
+        setIsPhoneOpen(false);
+      }
+    };
+    if (isPhoneOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isPhoneOpen]);
 
   const isHomePage = pathname === "/";
   const isSolid = isScrolled || !isHomePage;
@@ -79,28 +96,68 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            <a
-              href={PHONE_LINK}
-              className={cn(
-                "flex items-center gap-2 text-sm font-medium transition-colors duration-300",
-                isSolid ? "text-primary-500" : "text-white/90"
-              )}
+          <div className="hidden lg:flex items-center gap-5">
+            <div 
+              className="relative"
+              ref={phoneDropdownRef}
             >
-              <Phone className="w-4 h-4" />
-              {PHONE_DISPLAY}
-            </a>
-            <Link
-              href="/programare"
-              className={cn(
-                "px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 active:scale-95",
-                isSolid
-                  ? "bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-400 hover:to-primary-500 hover:shadow-lg hover:shadow-primary-400/30"
-                  : "bg-white text-primary-600 hover:bg-primary-50 hover:shadow-lg"
+              <button
+                onClick={() => setIsPhoneOpen(!isPhoneOpen)}
+                className={cn(
+                  "flex items-center gap-1.5 text-sm font-semibold transition-colors duration-300",
+                  isSolid ? "text-primary-600 hover:text-primary-800" : "text-white/90 hover:text-white"
+                )}
+              >
+                <Phone className="w-4 h-4" />
+                <span>{PHONE_1}</span>
+                <ChevronDown className={cn("w-4 h-4 transition-transform duration-300", isPhoneOpen ? "rotate-180" : "rotate-0")} />
+              </button>
+
+              {/* Dropdown Menu */}
+              <AnimatePresence>
+                {isPhoneOpen && (
+                  <m.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 min-w-[200px] z-50 origin-top"
+                  >
+                    {/* Caret pointing up */}
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t border-l border-neutral-100 shadow-[-2px_-2px_4px_rgba(0,0,0,0.02)] transform rotate-45" />
+                    
+                    <div className="relative z-10 bg-white rounded-2xl shadow-xl shadow-black/5 border border-neutral-100 flex flex-col">
+                      <a href={PHONE_LINK_1} className="flex items-center gap-3 px-5 py-3.5 text-sm font-semibold text-neutral-700 hover:bg-primary-50 hover:text-primary-600 transition-colors rounded-t-2xl">
+                        <Phone className="w-4 h-4 text-primary-400" />
+                        {PHONE_1}
+                      </a>
+                      <div className="mx-4 h-px bg-neutral-100" />
+                      <a href={PHONE_LINK_2} className="flex items-center gap-3 px-5 py-3.5 text-sm font-semibold text-neutral-700 hover:bg-primary-50 hover:text-primary-600 transition-colors rounded-b-2xl">
+                        <Phone className="w-4 h-4 text-primary-400" />
+                        {PHONE_2}
+                      </a>
+                    </div>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+            <div className="relative group">
+              {!isSolid && (
+                <div className="absolute -inset-1 bg-white/40 rounded-full blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
               )}
-            >
-              Programare
-            </Link>
+              <Link
+                href="/programare"
+                className={cn(
+                  "relative inline-flex items-center justify-center gap-2 px-7 py-2.5 rounded-full text-sm font-bold transition-all duration-300 active:scale-95 hover:-translate-y-0.5",
+                  isSolid
+                    ? "bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-md hover:shadow-lg hover:shadow-primary-400/30"
+                    : "bg-white text-primary-600 shadow-md hover:shadow-xl"
+                )}
+              >
+                <Calendar className="w-4 h-4" />
+                <span>Programare</span>
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}

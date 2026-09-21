@@ -41,10 +41,10 @@ export default function ProgramarePage() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8 items-start">
-          <div className="lg:col-span-2 space-y-8">
-            <AnimatedSection delay={0.1}>
-              <div className="bg-white rounded-3xl p-8 shadow-elevated border border-neutral-100">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8">
+          <div className="lg:col-span-2">
+            <AnimatedSection delay={0.1} className="h-full">
+              <div className="bg-white rounded-3xl p-8 shadow-elevated border border-neutral-100 h-full">
                 <h3 className="text-xl font-bold text-neutral-900 mb-6 font-display">Contact & Locație</h3>
                 <ul className="space-y-6">
                   <li>
@@ -52,7 +52,7 @@ export default function ProgramarePage() {
                       href={MAPS_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-start gap-4 group"
+                      className="flex items-start gap-4 p-3 -mx-3 rounded-2xl transition-all duration-300 hover:bg-neutral-50/50 hover:shadow-sm hover:-translate-y-1 hover:scale-[1.02] group"
                     >
                       <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center shrink-0 group-hover:bg-primary-100 transition-colors">
                         <MapPin className="w-5 h-5 text-primary-600" />
@@ -66,7 +66,7 @@ export default function ProgramarePage() {
                     </a>
                   </li>
                   <li>
-                    <a href={PHONE_LINK} className="flex items-start gap-4 group">
+                    <a href={PHONE_LINK} className="flex items-start gap-4 p-3 -mx-3 rounded-2xl transition-all duration-300 hover:bg-neutral-50/50 hover:shadow-sm hover:-translate-y-1 hover:scale-[1.02] group">
                       <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center shrink-0 group-hover:bg-primary-100 transition-colors">
                         <Phone className="w-5 h-5 text-primary-600" />
                       </div>
@@ -79,7 +79,7 @@ export default function ProgramarePage() {
                     </a>
                   </li>
                   <li>
-                    <a href={`mailto:${EMAIL}`} className="flex items-start gap-4 group">
+                    <a href={`mailto:${EMAIL}`} className="flex items-start gap-4 p-3 -mx-3 rounded-2xl transition-all duration-300 hover:bg-neutral-50/50 hover:shadow-sm hover:-translate-y-1 hover:scale-[1.02] group">
                       <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center shrink-0 group-hover:bg-primary-100 transition-colors">
                         <Mail className="w-5 h-5 text-primary-600" />
                       </div>
@@ -91,8 +91,8 @@ export default function ProgramarePage() {
                       </div>
                     </a>
                   </li>
-                  <li className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center shrink-0">
+                  <li className="flex items-start gap-4 p-3 -mx-3 rounded-2xl transition-all duration-300 hover:bg-neutral-50/50 hover:shadow-sm hover:-translate-y-1 hover:scale-[1.02] group cursor-default">
+                    <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center shrink-0 group-hover:bg-primary-100 transition-colors">
                       <Clock className="w-5 h-5 text-primary-600" />
                     </div>
                     <div>
@@ -108,8 +108,8 @@ export default function ProgramarePage() {
           </div>
 
           <div className="lg:col-span-3">
-            <AnimatedSection delay={0.2}>
-              <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-elevated border border-neutral-100">
+            <AnimatedSection delay={0.2} className="h-full">
+              <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-elevated border border-neutral-100 h-full">
                 <h3 className="text-xl font-bold text-neutral-900 mb-6 font-display">Formular de Programare</h3>
                 <Suspense fallback={<div className="p-4 text-center">Se încarcă formularul...</div>}>
                   <AppointmentForm />

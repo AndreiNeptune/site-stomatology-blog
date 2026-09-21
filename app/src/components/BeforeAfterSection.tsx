@@ -67,7 +67,7 @@ function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
     <div className="flex flex-col gap-4">
       <div 
         ref={containerRef}
-        className="relative w-full aspect-[3/4] sm:aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-elevated cursor-ew-resize select-none bg-neutral-100"
+        className="relative w-full aspect-[3/4] sm:aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-card transition-all duration-500 cursor-ew-resize select-none bg-neutral-100 group ring-4 ring-white/80 hover:ring-primary-400/50 hover:shadow-[0_0_40px_rgba(244,63,142,0.4)] hover:-translate-y-1"
         onMouseDown={(e: ReactMouseEvent) => {
           setIsDragging(true);
           handleMove(e.clientX);
@@ -102,11 +102,11 @@ function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
 
         {/* Slider Handle */}
         <div 
-          className="absolute top-0 bottom-0 w-1 bg-white/80 cursor-ew-resize shadow-[0_0_10px_rgba(0,0,0,0.3)]"
+          className="absolute top-0 bottom-0 w-1.5 bg-white cursor-ew-resize shadow-[0_0_15px_rgba(0,0,0,0.3)] z-20"
           style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
         >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-primary-500 border border-neutral-100">
-            <ArrowLeftRight className="w-5 h-5" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.4)] flex items-center justify-center text-primary-600 border-[3px] border-white transition-transform hover:scale-110 active:scale-95 group-hover:shadow-[0_0_25px_rgba(244,63,142,0.5)]">
+            <ArrowLeftRight className={`w-6 h-6 transition-transform ${!isDragging && sliderPosition === 50 ? 'animate-pulse' : ''}`} />
           </div>
         </div>
 
@@ -152,13 +152,19 @@ export default function BeforeAfterSection() {
           ))}
         </div>
 
-        <AnimatedSection delay={0.6} className="mt-16 flex justify-center">
+        <AnimatedSection delay={0.6} className="mt-20 flex justify-center">
           <Link
             href="/portofoliu"
-            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent-500 text-neutral-900 font-bold text-lg hover:bg-accent-400 hover:shadow-xl hover:shadow-accent-500/30 transition-all duration-300"
+            className="relative group inline-flex items-center justify-center transition-all duration-300 hover:-translate-y-1 active:scale-95"
           >
-            Vezi mai multe cazuri
-            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            {/* Glowing background for pulse effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary-400 via-accent-300 to-primary-500 rounded-full blur opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-soft"></div>
+            
+            {/* Button Surface */}
+            <div className="relative flex items-center gap-3 px-8 py-4 bg-white rounded-full text-primary-800 font-bold text-lg shadow-xl border border-primary-100">
+              <span className="transform-gpu">Mai multe zâmbete transformate</span>
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </div>
           </Link>
         </AnimatedSection>
       </div>

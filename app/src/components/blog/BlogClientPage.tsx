@@ -3,7 +3,6 @@
 import { useState, useMemo } from "react";
 import PostCard from "@/components/blog/PostCard";
 import BlogSearchBar from "@/components/blog/BlogSearchBar";
-import RecentProceduresSidebar from "@/components/blog/RecentProceduresSidebar";
 import { Post, Category } from "@/lib/sanity/types";
 
 interface BlogClientPageProps {
@@ -123,8 +122,6 @@ export default function BlogClientPage({
           {/* Sidebar */}
           <div className="lg:w-80 flex-shrink-0">
             <div className="lg:sticky lg:top-28">
-              <RecentProceduresSidebar posts={recentProcedures} locale={locale} />
-
               {/* Categories */}
               {categories && categories.length > 0 && (
                 <div className="mt-8">

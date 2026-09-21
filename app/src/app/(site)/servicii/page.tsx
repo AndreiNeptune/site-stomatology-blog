@@ -23,6 +23,12 @@ export default function ServicesPage() {
     getBnrRate().then(setBnrRate);
   }, []);
 
+  // Split bundles into rows of 2
+  const rows = [];
+  for (let i = 0; i < bundles.length; i += 2) {
+    rows.push(bundles.slice(i, i + 2));
+  }
+
   return (
     <div className="flex flex-col w-full">
       {/* Page Hero */}
@@ -53,15 +59,18 @@ export default function ServicesPage() {
 
       {/* Services Grid */}
       <section className="py-24 bg-neutral-50/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-10">
-            {bundles.map((service, index) => (
-              <AnimatedSection
-                key={service.id}
-                delay={index * 0.1}
-                className="group h-full"
-              >
-                <div className="flex flex-col h-full bg-white rounded-3xl border border-neutral-100 shadow-soft transition-all duration-500 hover:shadow-card hover:border-primary-200 overflow-hidden">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-8 xl:gap-10">
+            {rows.map((row, rowIndex) => (
+              <div key={rowIndex} className="flex flex-col md:flex-row gap-8 xl:gap-10 group/row">
+                {row.map((service, index) => (
+                  <AnimatedSection
+                    key={service.id}
+                    delay={0}
+                    direction={index === 0 ? "right" : "left"}
+                    className="group flex-1 min-w-[300px] transition-all duration-700 ease-out md:hover:flex-[1.15]"
+                  >
+                    <div className="flex flex-col h-full bg-white rounded-3xl border border-neutral-100 shadow-soft transition-all duration-700 hover:shadow-card hover:border-primary-300 md:group-hover:-translate-y-2 md:group-hover:scale-[1.02] overflow-hidden">
                   
                   {/* Service Image */}
                   <div className="relative h-48 w-full overflow-hidden">
@@ -148,7 +157,9 @@ export default function ServicesPage() {
                     </div>
                   </div>
                 </div>
-              </AnimatedSection>
+                  </AnimatedSection>
+                ))}
+              </div>
             ))}
           </div>
         </div>

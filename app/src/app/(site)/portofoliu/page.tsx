@@ -43,10 +43,10 @@ export default async function PortfolioPage() {
       <TestimonialVideo />
 
       {/* Recent Procedures Section */}
-      <div className="max-w-lg mx-auto px-5 sm:px-6 lg:px-8 mt-24">
+      <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 mt-24">
         <AnimatedSection direction="up" delay={0.2}>
-          <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-primary-100/50">
-            <RecentProceduresSidebar posts={recentProcedures} />
+          <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-primary-100/50">
+            <RecentProceduresSidebar posts={recentProcedures} variant="grid" />
           </div>
         </AnimatedSection>
       </div>

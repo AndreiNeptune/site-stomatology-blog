@@ -12,11 +12,11 @@ export default function TestimonialVideo() {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <AnimatedSection className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 lg:order-1 relative">
-            <div className="aspect-[9/16] max-w-sm mx-auto relative group">
+            <div className="aspect-[9/16] max-w-sm mx-auto relative group transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1">
               <video
                 src="/images/portofoliu/testimonial-clienta-fatete.mp4"
                 poster="/images/portofoliu/testimonial-poster.jpg"
-                className="w-full h-full object-cover rounded-3xl shadow-2xl bg-black"
+                className="w-full h-full object-cover rounded-3xl shadow-2xl bg-black transition-all duration-500 group-hover:shadow-[0_20px_50px_rgba(244,63,142,0.3)] group-hover:ring-4 group-hover:ring-primary-300/50"
                 controls
                 playsInline
                 preload="metadata"
@@ -43,7 +43,7 @@ export default function TestimonialVideo() {
               Descoperiți experiența Florentinei, pacienta noastră care a ales transformarea zâmbetului prin dinți pe implanturi și fațete dentare. Ea recomandă cu căldură clinica noastră, subliniind cât de mulțumită a fost de întregul proces, care a durat maxim o săptămână, și faptul că totul a decurs complet fără durere.
             </p>
             
-            <blockquote className="border-l-4 border-primary-500 pl-6 my-6 italic text-neutral-700 bg-white/50 py-4 pr-4 rounded-r-lg shadow-sm">
+            <blockquote className="border-l-4 border-primary-500 pl-6 my-6 italic text-neutral-700 bg-white/50 py-4 pr-4 rounded-r-lg shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:bg-white hover:border-primary-400">
               &quot;Recomand cu tot dragul! Tot procesul a durat maxim o săptămână. A fost o experiență minunată, personalul este extraordinar, iar rezultatul este pur și simplu wow. Nu a durut absolut deloc, totul a fost la superlativ!&quot;
             </blockquote>
 
