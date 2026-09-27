@@ -134,6 +134,7 @@ export default function Footer() {
             <ul className="space-y-4 mb-8">
               <li>
                 <a
+                  id="link-footer-maps"
                   href={`https://maps.google.com/?q=${MAPS_QUERY}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -147,7 +148,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={PHONE_LINK} className="flex items-center gap-3 group">
+                <a id="link-footer-telefon" href={PHONE_LINK} className="flex items-center gap-3 group">
                   <Phone className="w-4 h-4 text-primary-500 shrink-0" />
                   <span className="text-sm text-neutral-400 group-hover:text-primary-400 transition-colors">
                     {PHONE_DISPLAY}
@@ -155,7 +156,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 group">
+                <a id="link-footer-email" href={`mailto:${EMAIL}`} className="flex items-center gap-3 group">
                   <Mail className="w-4 h-4 text-primary-500 shrink-0" />
                   <span className="text-sm text-neutral-400 group-hover:text-primary-400 transition-colors">
                     {EMAIL}
@@ -247,6 +248,7 @@ export default function Footer() {
                     className="w-full px-4 py-3 rounded-xl bg-neutral-800/80 border border-neutral-700 text-white placeholder:text-neutral-500 text-sm focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/30 transition-colors resize-none"
                   />
                   <button
+                    id="btn-footer-contact-submit"
                     type="submit"
                     disabled={isPending}
                     className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold text-sm transition-all duration-300 hover:from-primary-400 hover:to-primary-500 hover:shadow-lg hover:shadow-primary-500/25 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"

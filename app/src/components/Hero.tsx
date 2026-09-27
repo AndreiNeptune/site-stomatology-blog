@@ -79,6 +79,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 mb-16"
           >
             <a
+              id="btn-hero-programare"
               href="/programare"
               className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary-600 font-bold text-base transition-all duration-300 hover:shadow-xl hover:shadow-white/30 hover:scale-[1.02] active:scale-[0.98]"
             >
@@ -87,6 +88,7 @@ export default function Hero() {
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
+              id="btn-hero-servicii"
               href="/servicii"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white/25 text-white font-semibold text-base transition-all duration-300 hover:bg-white/10 hover:border-white/40"
             >
@@ -107,7 +109,7 @@ export default function Hero() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wider text-white/40">Telefon</p>
-                <a href={PHONE_LINK} className="text-sm font-semibold text-white hover:text-primary-200 transition-colors sm:whitespace-nowrap">
+                <a id="link-hero-telefon" href={PHONE_LINK} className="text-sm font-semibold text-white hover:text-primary-200 transition-colors sm:whitespace-nowrap">
                   {PHONE_DISPLAY}
                 </a>
               </div>
@@ -128,6 +130,7 @@ export default function Hero() {
               <div>
                 <p className="text-xs uppercase tracking-wider text-white/40">Adresă</p>
                 <a 
+                  id="link-hero-adresa"
                   href="https://maps.google.com/?q=Dr Bianca Ionescu Bucuresti" 
                   target="_blank" 
                   rel="noopener noreferrer"

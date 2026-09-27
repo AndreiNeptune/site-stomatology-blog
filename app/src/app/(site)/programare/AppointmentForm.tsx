@@ -255,6 +255,7 @@ export default function AppointmentForm() {
       </div>
 
       <button
+        id="btn-appointment-submit"
         type="submit"
         disabled={isSubmitting}
         className="w-full mt-2 px-8 py-4 rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold text-base transition-all duration-300 hover:shadow-xl hover:shadow-primary-400/30 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none"
