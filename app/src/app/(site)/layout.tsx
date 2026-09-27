@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://rapident.ro"),
   title: "Dr. Bianca Ionescu | Stomatologie și Estetică Dentară — București",
   description:
-    "Dr. Bianca Ionescu este clinica stomatologică premium din București, dedicată rezultatelor estetice elegante. Fațete dentare, albire profesională, implanturi și coroane — toate cu grijă, fără durere. Str. Vulturilor 93A, Sector 3.",
+    "Dr. Bianca Ionescu este clinica stomatologică premium din București, dedicată rezultatelor estetice elegante. Fațete dentare, albire profesională, implanturi și coroane — toate cu grijă, fără durere. Calea Victoriei 1-5, 030021 București.",
   keywords: [
     "Dr. Bianca Ionescu",
     "clinica stomatologica bucuresti",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dr. Bianca Ionescu | Stomatologie și Estetică Dentară",
     description:
-      "Proceduri sigure, complet fără durere, cu rezultate vizibile încă de la prima ședință. Zâmbetul tău, arta noastră.",
+      "Proceduri sigure, complet fără durere, cu rezultate vizibile încă de la prima ședință. Zâmbetul tău, arta noastră. Calea Victoriei 1-5, București.",
     url: "https://rapident.ro",
     siteName: "Dr. Bianca Ionescu",
     locale: "ro_RO",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Dr. Bianca Ionescu | Stomatologie și Estetică Dentară",
-    description: "Proceduri sigure, complet fără durere, cu rezultate vizibile încă de la prima ședință. Zâmbetul tău, arta noastră.",
+    description: "Proceduri sigure, complet fără durere, cu rezultate vizibile încă de la prima ședință. Zâmbetul tău, arta noastră. Calea Victoriei 1-5, București.",
     images: ["/images/og-image-cover.png"],
   },
   icons: {
@@ -111,7 +111,9 @@ export default function RootLayout({
     "telephone": "0726 206 012",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Calea Victoriei 1-5",
       "addressLocality": "București",
+      "postalCode": "030021",
       "addressCountry": "RO"
     },
     "openingHoursSpecification": {

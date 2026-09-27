@@ -11,10 +11,9 @@ import { cn } from "@/lib/utils";
 const PHONE_DISPLAY   = "0726 206 012 / 0799 999 200";
 const PHONE_LINK      = "tel:0726206012";
 const EMAIL           = "contact@rapident.ro";              // TODO
-const ADDRESS_LINE1   = "Str. [Adresa Clinicii]";             // TODO
-const ADDRESS_LINE2   = "Sector __, București";               // TODO
-const MAPS_QUERY      = "Dr+Bianca+Ionescu+Bucuresti";              // TODO: Google Maps query
-const MAPS_EMBED_SRC  = "";                                   // TODO: paste Google Maps embed URL
+const ADDRESS_LINE1   = "Calea Victoriei 1-5";
+const ADDRESS_LINE2   = "030021 București";
+const MAPS_QUERY      = "Dr Bianca Ionescu Bucuresti";
 const INSTAGRAM_URL   = "#";                                  // TODO: Instagram link
 const FACEBOOK_URL    = "#";                                  // TODO: Facebook link
 // ─────────────────────────────────────────────────────────────────────────────
@@ -173,23 +172,17 @@ export default function Footer() {
             </ul>
             
             {/* Embedded Google Map */}
-            <div className="mt-auto rounded-xl overflow-hidden h-[150px] border border-neutral-800 relative group">
-              {MAPS_EMBED_SRC ? (
-                <iframe
-                  src={MAPS_EMBED_SRC}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full grayscale-[0.3] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center bg-neutral-800/50">
-                  <span className="text-neutral-400 text-xs">Hartă — adaugă link embed Google Maps</span>
-                </div>
-              )}
+            <div className="mt-auto rounded-xl overflow-hidden h-[180px] border border-neutral-800 relative group">
+              <iframe
+                src={`https://maps.google.com/maps?q=Dr%20Bianca%20Ionescu%20Bucuresti&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full grayscale-[0.3] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+              />
             </div>
           </div>
 

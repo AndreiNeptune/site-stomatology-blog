@@ -6,9 +6,9 @@ import AppointmentForm from "./AppointmentForm";
 const PHONE_DISPLAY  = "0726 206 012 / 0799 999 200";
 const PHONE_LINK     = "tel:0726206012";
 const EMAIL          = "contact@rapident.ro";           // TODO
-const ADDRESS_LINE1  = "Str. [Adresa Clinicii]";          // TODO
-const ADDRESS_LINE2  = "Sector __, București";            // TODO
-const MAPS_URL       = "https://maps.google.com/?q=Dr+Bianca+Ionescu+Bucuresti"; // TODO
+const ADDRESS_LINE1  = "Calea Victoriei 1-5";
+const ADDRESS_LINE2  = "030021 București";
+const MAPS_URL       = "https://maps.google.com/?q=Dr Bianca Ionescu Bucuresti";
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const metadata = {

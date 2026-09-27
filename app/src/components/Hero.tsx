@@ -7,7 +7,7 @@ import Image from "next/image";
 // ─── UPDATE THESE ─────────────────────────────────────────────────────────────
 const PHONE_DISPLAY  = "0726 206 012 / 0799 999 200";
 const PHONE_LINK     = "tel:0726206012";
-const ADDRESS        = "Str. [Adresa Clinicii], Sector __, București"; // TODO
+const ADDRESS        = "Calea Victoriei 1-5, 030021 București";
 // ──────────────────────────────────────────────────────────────────────────────
 
 export default function Hero() {
@@ -127,7 +127,14 @@ export default function Hero() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wider text-white/40">Adresă</p>
-                <p className="text-sm font-semibold text-white sm:whitespace-nowrap">{ADDRESS}</p>
+                <a 
+                  href="https://maps.google.com/?q=Dr Bianca Ionescu Bucuresti" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-white hover:text-primary-200 transition-colors sm:whitespace-nowrap block"
+                >
+                  {ADDRESS}
+                </a>
               </div>
             </div>
           </m.div>
