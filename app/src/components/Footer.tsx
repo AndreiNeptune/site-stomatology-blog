@@ -63,6 +63,11 @@ export default function Footer() {
       const result = await submitContactForm(formData);
       if (result.success) {
         setSubmitted(true);
+        // GTM event
+        if (typeof window !== "undefined") {
+          (window as any).dataLayer = (window as any).dataLayer || [];
+          (window as any).dataLayer.push({ event: "form_success", form_name: "contact" });
+        }
         form.reset();
       } else {
         alert(result.message);

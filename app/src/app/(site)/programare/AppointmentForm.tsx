@@ -118,6 +118,11 @@ export default function AppointmentForm() {
       }
 
       setSubmitted(true);
+      // GTM event
+      if (typeof window !== "undefined") {
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push({ event: "form_success", form_name: "programare" });
+      }
       reset();
     } catch (error) {
       console.error("Eroare la trimiterea formularului spre server:", error);
