@@ -101,7 +101,7 @@ function VideoItem({ item, isPlaying, onPlay }: { item: PortfolioItem, isPlaying
     <div className="relative w-full h-full">
       <video
         ref={videoRef}
-        src={item.src}
+        src={`${item.src}#t=0.001`}
         className="w-full h-full object-cover"
         controls={isPlaying}
         loop
