@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import AnimatedSection from "@/components/AnimatedSection";
 import PortfolioGrid from "@/components/PortfolioGrid";
 import TestimonialVideo from "@/components/TestimonialVideo";
-import { Sparkles } from "lucide-react";
+import CertificatesGallery from "@/components/CertificatesGallery";
+import { Sparkles, Award } from "lucide-react";
 import { client } from "@/lib/sanity/client";
 import { recentProceduresQuery } from "@/lib/sanity/queries";
 import RecentProceduresSidebar from "@/components/blog/RecentProceduresSidebar";
@@ -41,6 +42,24 @@ export default async function PortfolioPage() {
       </div>
       
       <TestimonialVideo />
+
+      {/* Certificates & Diplomas Section */}
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 mt-24 relative z-10">
+        <AnimatedSection className="text-center max-w-3xl mx-auto mb-12">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100 text-primary-600 text-sm font-semibold mb-4 shadow-sm border border-primary-200/50">
+            <Award className="w-4 h-4" />
+            Acreditări & Diplome
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 mb-6 font-display tracking-tight">
+            Formare <span className="bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent">Profesională</span> Continuă
+          </h2>
+          <p className="text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+            Peste 15 ani de experiență și perfecționare continuă la cele mai prestigioase instituții din lume — de la New York University la Geistlich Biomaterials și Dürr Dental Academy.
+          </p>
+        </AnimatedSection>
+
+        <CertificatesGallery />
+      </div>
 
       {/* Recent Procedures Section */}
       <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 mt-24">
