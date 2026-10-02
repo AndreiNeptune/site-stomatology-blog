@@ -29,7 +29,7 @@ interface Certificate {
 
 const certificates: Certificate[] = [
   {
-    src: "/images/acreditari/european-endo-resto-perio-conference-2025.jpeg",
+    src: "/images/acreditari/european-endo-resto-perio-conference-2025.webp",
     title: "European Endo-Resto-Perio Conference",
     issuer: "European Endo Learning Academy",
     year: "2025",
@@ -40,7 +40,7 @@ const certificates: Certificate[] = [
     highlights: ["24 CPD / ECMEC", "Format hibrid"],
   },
   {
-    src: "/images/acreditari/nyu-dental-leaders-summit-2022.jpeg",
+    src: "/images/acreditari/nyu-dental-leaders-summit-2022.webp",
     title: "Dental Leaders Summit 2022",
     issuer: "New York University College of Dentistry",
     year: "2022",
@@ -51,7 +51,7 @@ const certificates: Certificate[] = [
     highlights: ["2000 credite", "4 zile intensive"],
   },
   {
-    src: "/images/acreditari/nyu-current-concepts-aesthetics-implantology-2022.jpeg",
+    src: "/images/acreditari/nyu-current-concepts-aesthetics-implantology-2022.webp",
     title: "Current Concepts in American Dentistry",
     issuer: "NYU College of Dentistry – Linhart Program",
     year: "2022",
@@ -62,7 +62,7 @@ const certificates: Certificate[] = [
     highlights: ["30 ore de curs", "Estetică & Implantologie"],
   },
   {
-    src: "/images/acreditari/nyu-college-of-dentistry-achievement-2022-v3.jpeg",
+    src: "/images/acreditari/nyu-college-of-dentistry-achievement-2022-v3.webp",
     title: "Certificate of Achievement – Implantology & Aesthetics",
     issuer: "New York University College of Dentistry",
     year: "2022",
@@ -73,7 +73,7 @@ const certificates: Certificate[] = [
     highlights: ["Certificat de excelență", "Program internațional"],
   },
   {
-    src: "/images/acreditari/durr-dental-vector-paro-pro-2022.jpeg",
+    src: "/images/acreditari/durr-dental-vector-paro-pro-2022.webp",
     title: "Terapia Parodontală Non-Chirurgicală cu Vector® Paro Pro",
     issuer: "Dürr Dental Academy",
     year: "2022",
@@ -84,7 +84,7 @@ const certificates: Certificate[] = [
     highlights: ["Certificare profesională", "Tehnologie cu ultrasunete"],
   },
   {
-    src: "/images/acreditari/adre-sisteme-robotizate-medicina-dentara-2021.jpeg",
+    src: "/images/acreditari/adre-sisteme-robotizate-medicina-dentara-2021.webp",
     title: "Sisteme Robotizate în Medicina Românească Actuală",
     issuer: "ADRE – Asociația Dentară Română pentru Educație",
     year: "2021",
@@ -95,7 +95,7 @@ const certificates: Certificate[] = [
     highlights: ["16 credite EMC", "Sisteme robotizate"],
   },
   {
-    src: "/images/acreditari/glidewell-bruxzir-solid-zirconia-2018.jpeg",
+    src: "/images/acreditari/glidewell-bruxzir-solid-zirconia-2018.webp",
     title: "BruxZir® Solid Zirconia Training",
     issuer: "Glidewell Europe GmbH",
     year: "2018",
@@ -106,7 +106,7 @@ const certificates: Certificate[] = [
     highlights: ["Certificare completă", "Zirconiu solid"],
   },
   {
-    src: "/images/acreditari/resista-toronto-implants-immediate-loading-2018.jpeg",
+    src: "/images/acreditari/resista-toronto-implants-immediate-loading-2018.webp",
     title: "Evolved Toronto pe 4 Implanturi – Încărcare Imediată",
     issuer: "Resista Group & Terra Dent",
     year: "2018",
@@ -117,7 +117,7 @@ const certificates: Certificate[] = [
     highlights: ["Workshop practic", "Încărcare imediată"],
   },
   {
-    src: "/images/acreditari/filorga-medical-academy-2017.jpeg",
+    src: "/images/acreditari/filorga-medical-academy-2017.webp",
     title: "Filorga Medical Academy – Diplomă",
     issuer: "Filorga Laboratories, Paris",
     year: "2017",
@@ -128,7 +128,7 @@ const certificates: Certificate[] = [
     highlights: ["Training complet", "Academia Paris"],
   },
   {
-    src: "/images/acreditari/dental4all-congres-carol-davila-2017.jpeg",
+    src: "/images/acreditari/dental4all-congres-carol-davila-2017.webp",
     title: "Congres Internațional – Facultatea de Medicină Dentară",
     issuer: "Dental4All Congress – UMF Carol Davila",
     year: "2017",
@@ -139,7 +139,7 @@ const certificates: Certificate[] = [
     highlights: ["24 puncte EMC", "Participare internațională"],
   },
   {
-    src: "/images/acreditari/hyaluronica-rontis-2015.jpeg",
+    src: "/images/acreditari/hyaluronica-rontis-2015.webp",
     title: "Cursul Hyaluronica® T.R.U.S.T",
     issuer: "Vital Esthétique & Rontis",
     year: "2015",
@@ -150,7 +150,7 @@ const certificates: Certificate[] = [
     highlights: ["Acid hialuronic", "Estetică facială"],
   },
   {
-    src: "/images/acreditari/megagen-balkanian-bone-tissue-days-2015.jpeg",
+    src: "/images/acreditari/megagen-balkanian-bone-tissue-days-2015.webp",
     title: "International Symposium – Balkanian Bone & Tissue Days",
     issuer: "MegaGen & Botiss Biomaterials",
     year: "2015",
@@ -161,7 +161,7 @@ const certificates: Certificate[] = [
     highlights: ["Regenerare osoasă", "Simpozion internațional"],
   },
   {
-    src: "/images/acreditari/megagen-ridge-split-vs-gbr-bone-augmentation-2015.jpeg",
+    src: "/images/acreditari/megagen-ridge-split-vs-gbr-bone-augmentation-2015.webp",
     title: "Ridge Split vs. GBR în Augmentare Osoasă",
     issuer: "MegaGen & Botiss – Dr. Samuel Lee",
     year: "2015",
@@ -172,7 +172,7 @@ const certificates: Certificate[] = [
     highlights: ["Workshop specializat", "Augmentare osoasă"],
   },
   {
-    src: "/images/acreditari/merz-aesthetics-masterclass-2015-v2.jpeg",
+    src: "/images/acreditari/merz-aesthetics-masterclass-2015-v2.webp",
     title: "Masterclass Merz Romania",
     issuer: "Merz Aesthetics",
     year: "2015",
@@ -183,7 +183,7 @@ const certificates: Certificate[] = [
     highlights: ["Masterclass", "Traineri internaționali"],
   },
   {
-    src: "/images/acreditari/simpozion-amsmb-implante-protetica-dentara-2014.jpeg",
+    src: "/images/acreditari/simpozion-amsmb-implante-protetica-dentara-2014.webp",
     title: "Simpozion AMSMB – Implante și Protetică Dentară",
     issuer: "Asociația Medicilor Stomatologi din București",
     year: "2014",
@@ -194,7 +194,7 @@ const certificates: Certificate[] = [
     highlights: ["50 ore EMC", "Protetică pe implanturi"],
   },
   {
-    src: "/images/acreditari/sser-congres-estetica-dentara-2012.jpeg",
+    src: "/images/acreditari/sser-congres-estetica-dentara-2012.webp",
     title: "Congres Internațional de Estetică Dentară – DENT",
     issuer: "Societatea de Stomatologie Estetică din România (SSER)",
     year: "2012",
@@ -205,7 +205,7 @@ const certificates: Certificate[] = [
     highlights: ["50 ore EMC", "25 puncte SSER"],
   },
   {
-    src: "/images/acreditari/aesculap-implantology-days-germany-2012.jpeg",
+    src: "/images/acreditari/aesculap-implantology-days-germany-2012.webp",
     title: "Implantology Days Workshop",
     issuer: "Aesculap Akademie GmbH",
     year: "2012",
@@ -216,7 +216,7 @@ const certificates: Certificate[] = [
     highlights: ["Workshop intensiv", "Centru de excelență"],
   },
   {
-    src: "/images/acreditari/artis-biotech-protetica-fixa-pe-implanturi-2011.jpeg",
+    src: "/images/acreditari/artis-biotech-protetica-fixa-pe-implanturi-2011.webp",
     title: "Secretul Succesului în Implantologie – Protetică Fixă pe Implanturi",
     issuer: "Artis Bio Tech",
     year: "2011",
@@ -227,7 +227,7 @@ const certificates: Certificate[] = [
     highlights: ["Curs de perfecționare", "Protetică fixă"],
   },
   {
-    src: "/images/acreditari/geistlich-biomaterials-training-switzerland-2011.jpeg",
+    src: "/images/acreditari/geistlich-biomaterials-training-switzerland-2011.webp",
     title: "Distributor Training – Geistlich Bio-Oss®, Bio-Gide® & Mucograft®",
     issuer: "Geistlich Biomaterials",
     year: "2011",
@@ -238,7 +238,7 @@ const certificates: Certificate[] = [
     highlights: ["3 zile intensive", "Hands-on Elveția"],
   },
   {
-    src: "/images/acreditari/stomatologie-de-la-a-la-z-2011.jpeg",
+    src: "/images/acreditari/stomatologie-de-la-a-la-z-2011.webp",
     title: "Congres „Stomatologie de la A la Z”",
     issuer: "Societatea Dentară Română & CMDR",
     year: "2011",
@@ -249,7 +249,7 @@ const certificates: Certificate[] = [
     highlights: ["32 ore EMC", "Legislație CMDR"],
   },
   {
-    src: "/images/acreditari/ards-implants-oral-implantology-2010.jpeg",
+    src: "/images/acreditari/ards-implants-oral-implantology-2010.webp",
     title: "Course of Oral Implantology – ARDS Implants System",
     issuer: "The International Institute of ARDS Implants",
     year: "2010",
